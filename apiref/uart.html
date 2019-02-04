@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>UARTs &#8212; Freedom Metal v0.1.2-76-g7810849 documentation</title>
+    <title>UARTs &#8212; Freedom Metal v0.1.2-92-g9f5c338 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -40,8 +40,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="function">
-<dt id="_CPPv313mee_uart_initP8mee_uarti">
-<span id="_CPPv213mee_uart_initP8mee_uarti"></span><span id="mee_uart_init__mee_uartP.i"></span><span class="target" id="uart_8h_1a3494431e219a09f26b8cd74e78af86fb"></span>void <code class="descname">mee_uart_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv38mee_uart" title="mee_uart">mee_uart</a> *<em>uart</em>, int <em>baud_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313mee_uart_initP8mee_uarti" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv315metal_uart_initP10metal_uarti">
+<span id="_CPPv215metal_uart_initP10metal_uarti"></span><span id="metal_uart_init__metal_uartP.i"></span><span class="target" id="uart_8h_1adbf9256d85888e26836baba4a51fc1e4"></span>void <code class="descname">metal_uart_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_uart" title="metal_uart">metal_uart</a> *<em>uart</em>, int <em>baud_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315metal_uart_initP10metal_uarti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initialize UART device. </p>
 <p>Initialize the UART device described by the UART handle. This function must be called before any other method on the UART can be invoked. It is invalid to initialize a UART more than once.</p>
 <p><dl class="docutils">
@@ -56,8 +56,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv313mee_uart_putcP8mee_uarth">
-<span id="_CPPv213mee_uart_putcP8mee_uarth"></span><span id="mee_uart_putc__mee_uartP.unsigned-c"></span><span class="target" id="uart_8h_1a644aca7ba41d85cdadb1e776dbe790f8"></span>int <code class="descname">mee_uart_putc</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv38mee_uart" title="mee_uart">mee_uart</a> *<em>uart</em>, unsigned char <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313mee_uart_putcP8mee_uarth" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv315metal_uart_putcP10metal_uarth">
+<span id="_CPPv215metal_uart_putcP10metal_uarth"></span><span id="metal_uart_putc__metal_uartP.unsigned-c"></span><span class="target" id="uart_8h_1aed0d369d1bccd7703496b85e4a660e9c"></span>int <code class="descname">metal_uart_putc</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_uart" title="metal_uart">metal_uart</a> *<em>uart</em>, unsigned char <em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315metal_uart_putcP10metal_uarth" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Output a character over the UART. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -73,8 +73,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv313mee_uart_getcP8mee_uartPh">
-<span id="_CPPv213mee_uart_getcP8mee_uartPh"></span><span id="mee_uart_getc__mee_uartP.unsigned-cP"></span><span class="target" id="uart_8h_1a0804c56f868d9801b9dabaed37f1a445"></span>int <code class="descname">mee_uart_getc</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv38mee_uart" title="mee_uart">mee_uart</a> *<em>uart</em>, unsigned char *<em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313mee_uart_getcP8mee_uartPh" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv315metal_uart_getcP10metal_uartPh">
+<span id="_CPPv215metal_uart_getcP10metal_uartPh"></span><span id="metal_uart_getc__metal_uartP.unsigned-cP"></span><span class="target" id="uart_8h_1a8bb43c693eaef1b3a50f7f90da319723"></span>int <code class="descname">metal_uart_getc</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_uart" title="metal_uart">metal_uart</a> *<em>uart</em>, unsigned char *<em>c</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315metal_uart_getcP10metal_uartPh" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Read a character sent over the UART. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -90,8 +90,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv322mee_uart_get_baud_rateP8mee_uart">
-<span id="_CPPv222mee_uart_get_baud_rateP8mee_uart"></span><span id="mee_uart_get_baud_rate__mee_uartP"></span><span class="target" id="uart_8h_1a5a54bdf0bed484fd82db0fa91b846af3"></span>int <code class="descname">mee_uart_get_baud_rate</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv38mee_uart" title="mee_uart">mee_uart</a> *<em>uart</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322mee_uart_get_baud_rateP8mee_uart" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv324metal_uart_get_baud_rateP10metal_uart">
+<span id="_CPPv224metal_uart_get_baud_rateP10metal_uart"></span><span id="metal_uart_get_baud_rate__metal_uartP"></span><span class="target" id="uart_8h_1a9ad40970f7ddee96d8742262108bace7"></span>int <code class="descname">metal_uart_get_baud_rate</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_uart" title="metal_uart">metal_uart</a> *<em>uart</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324metal_uart_get_baud_rateP10metal_uart" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the baud rate of the UART peripheral. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -106,8 +106,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv322mee_uart_set_baud_rateP8mee_uarti">
-<span id="_CPPv222mee_uart_set_baud_rateP8mee_uarti"></span><span id="mee_uart_set_baud_rate__mee_uartP.i"></span><span class="target" id="uart_8h_1a406311bb098e66eccdffb87fdae85877"></span>int <code class="descname">mee_uart_set_baud_rate</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv38mee_uart" title="mee_uart">mee_uart</a> *<em>uart</em>, int <em>baud_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322mee_uart_set_baud_rateP8mee_uarti" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv324metal_uart_set_baud_rateP10metal_uarti">
+<span id="_CPPv224metal_uart_set_baud_rateP10metal_uarti"></span><span id="metal_uart_set_baud_rate__metal_uartP.i"></span><span class="target" id="uart_8h_1a1dfd8db9befd5a70a1575a78c7b2be9b"></span>int <code class="descname">metal_uart_set_baud_rate</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_uart" title="metal_uart">metal_uart</a> *<em>uart</em>, int <em>baud_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324metal_uart_set_baud_rateP10metal_uarti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the baud rate of the UART peripheral. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -123,8 +123,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv329mee_uart_interrupt_controllerP8mee_uart">
-<span id="_CPPv229mee_uart_interrupt_controllerP8mee_uart"></span><span id="mee_uart_interrupt_controller__mee_uartP"></span><span class="target" id="uart_8h_1a38df7c2901bba1e12c4d92c325fdc186"></span><em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv313mee_interrupt" title="mee_interrupt">mee_interrupt</a> *<code class="descname">mee_uart_interrupt_controller</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv38mee_uart" title="mee_uart">mee_uart</a> *<em>uart</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329mee_uart_interrupt_controllerP8mee_uart" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv331metal_uart_interrupt_controllerP10metal_uart">
+<span id="_CPPv231metal_uart_interrupt_controllerP10metal_uart"></span><span id="metal_uart_interrupt_controller__metal_uartP"></span><span class="target" id="uart_8h_1ab18c5494323eafd1fb571f4f0a870d7f"></span><em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_uart_interrupt_controller</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_uart" title="metal_uart">metal_uart</a> *<em>uart</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv331metal_uart_interrupt_controllerP10metal_uart" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the interrupt controller of the UART peripheral. </p>
 <p>Get the interrupt controller for the UART peripheral. The interrupt controller must be initialized before any interrupts can be registered or enabled with it.</p>
 <p><dl class="docutils">
@@ -140,8 +140,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv325mee_uart_get_interrupt_idP8mee_uart">
-<span id="_CPPv225mee_uart_get_interrupt_idP8mee_uart"></span><span id="mee_uart_get_interrupt_id__mee_uartP"></span><span class="target" id="uart_8h_1ae095d1b70d806a38c4b41bf263d2699f"></span>int <code class="descname">mee_uart_get_interrupt_id</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv38mee_uart" title="mee_uart">mee_uart</a> *<em>uart</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325mee_uart_get_interrupt_idP8mee_uart" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv327metal_uart_get_interrupt_idP10metal_uart">
+<span id="_CPPv227metal_uart_get_interrupt_idP10metal_uart"></span><span id="metal_uart_get_interrupt_id__metal_uartP"></span><span class="target" id="uart_8h_1a785bd006fa3262d19cb54fc2e88a6a57"></span>int <code class="descname">metal_uart_get_interrupt_id</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_uart" title="metal_uart">metal_uart</a> *<em>uart</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv327metal_uart_get_interrupt_idP10metal_uart" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the interrupt ID of the UART controller. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -157,8 +157,8 @@
 
 </div>
 <dl class="class">
-<dt id="_CPPv38mee_uart">
-<span id="_CPPv28mee_uart"></span><span id="mee_uart"></span><span class="target" id="structmee__uart"></span><em class="property">struct </em><code class="descname">mee_uart</code><a class="headerlink" href="#_CPPv38mee_uart" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv310metal_uart">
+<span id="_CPPv210metal_uart"></span><span id="metal_uart"></span><span class="target" id="structmetal__uart"></span><em class="property">struct </em><code class="descname">metal_uart</code><a class="headerlink" href="#_CPPv310metal_uart" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em>#include &lt;uart.h&gt;</em><p>Handle for a UART serial device. </p>
 </dd></dl>
 
