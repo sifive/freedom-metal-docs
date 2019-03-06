@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Clocks &#8212; Freedom Metal v0.1.2-104-g23d01fd documentation</title>
+    <title>Clocks &#8212; Freedom Metal v0.1.2-126-g653d2d1 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -18,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="CPU" href="cpu.html" />
-    <link rel="prev" title="Buttons" href="button.html" />
+    <link rel="prev" title="Caches" href="cache.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -73,8 +73,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv323metal_clock_set_rate_hzP11metal_clockl">
-<span id="_CPPv223metal_clock_set_rate_hzP11metal_clockl"></span><span id="metal_clock_set_rate_hz__metal_clockP.l"></span><span class="target" id="clock_8h_1a3670a40780226f31c9dd8ea189e7b4d4"></span>long <code class="descname">metal_clock_set_rate_hz</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_clock" title="metal_clock">metal_clock</a> *<em>clk</em>, long <em>hz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_clock_set_rate_hzP11metal_clockl" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv323metal_clock_set_rate_hzPK11metal_clockl">
+<span id="_CPPv223metal_clock_set_rate_hzPK11metal_clockl"></span><span id="metal_clock_set_rate_hz__metal_clockCP.l"></span><span class="target" id="clock_8h_1a201458148ef604a10bbfbcbc2797730b"></span>long <code class="descname">metal_clock_set_rate_hz</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_clock" title="metal_clock">metal_clock</a> *<em>clk</em>, long <em>hz</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_clock_set_rate_hzPK11metal_clockl" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the current rate of a clock. </p>
 <p><p>Attempts to set the current rate of the given clock to as close as possible to the given rate in Hz. Returns the actual value that’s been selected, which could be anything!</p>
 <dl class="docutils">
@@ -92,8 +92,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv345metal_clock_register_pre_rate_change_callbackP11metal_clock36metal_clock_pre_rate_change_callbackPv">
-<span id="_CPPv245metal_clock_register_pre_rate_change_callbackP11metal_clock36metal_clock_pre_rate_change_callbackPv"></span><span id="metal_clock_register_pre_rate_change_callback__metal_clockP.metal_clock_pre_rate_change_callback.voidP"></span><span class="target" id="clock_8h_1ac1401db96e6b29a7e1ecafbefa3fe0b8"></span>void <code class="descname">metal_clock_register_pre_rate_change_callback</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_clock" title="metal_clock">metal_clock</a> *<em>clk</em>, <a class="reference internal" href="#_CPPv336metal_clock_pre_rate_change_callback" title="metal_clock_pre_rate_change_callback">metal_clock_pre_rate_change_callback</a> <em>cb</em>, void *<em>priv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv345metal_clock_register_pre_rate_change_callbackP11metal_clock36metal_clock_pre_rate_change_callbackPv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv345metal_clock_register_pre_rate_change_callbackPK11metal_clock36metal_clock_pre_rate_change_callbackPv">
+<span id="_CPPv245metal_clock_register_pre_rate_change_callbackPK11metal_clock36metal_clock_pre_rate_change_callbackPv"></span><span id="metal_clock_register_pre_rate_change_callback__metal_clockCP.metal_clock_pre_rate_change_callback.voidP"></span><span class="target" id="clock_8h_1a7d4eb9f4bdb7b5fd0a1736c11dbb306a"></span>void <code class="descname">metal_clock_register_pre_rate_change_callback</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_clock" title="metal_clock">metal_clock</a> *<em>clk</em>, <a class="reference internal" href="#_CPPv336metal_clock_pre_rate_change_callback" title="metal_clock_pre_rate_change_callback">metal_clock_pre_rate_change_callback</a> <em>cb</em>, void *<em>priv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv345metal_clock_register_pre_rate_change_callbackPK11metal_clock36metal_clock_pre_rate_change_callbackPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register a callback that must be called before a rate change. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
@@ -108,8 +108,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv346metal_clock_register_post_rate_change_callbackP11metal_clock37metal_clock_post_rate_change_callbackPv">
-<span id="_CPPv246metal_clock_register_post_rate_change_callbackP11metal_clock37metal_clock_post_rate_change_callbackPv"></span><span id="metal_clock_register_post_rate_change_callback__metal_clockP.metal_clock_post_rate_change_callback.voidP"></span><span class="target" id="clock_8h_1a51f8c1c9dc234cbcbac4045d5da66642"></span>void <code class="descname">metal_clock_register_post_rate_change_callback</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_clock" title="metal_clock">metal_clock</a> *<em>clk</em>, <a class="reference internal" href="#_CPPv337metal_clock_post_rate_change_callback" title="metal_clock_post_rate_change_callback">metal_clock_post_rate_change_callback</a> <em>cb</em>, void *<em>priv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv346metal_clock_register_post_rate_change_callbackP11metal_clock37metal_clock_post_rate_change_callbackPv" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv346metal_clock_register_post_rate_change_callbackPK11metal_clock37metal_clock_post_rate_change_callbackPv">
+<span id="_CPPv246metal_clock_register_post_rate_change_callbackPK11metal_clock37metal_clock_post_rate_change_callbackPv"></span><span id="metal_clock_register_post_rate_change_callback__metal_clockCP.metal_clock_post_rate_change_callback.voidP"></span><span class="target" id="clock_8h_1a80aba2c505821a979143d411453e38c5"></span>void <code class="descname">metal_clock_register_post_rate_change_callback</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_clock" title="metal_clock">metal_clock</a> *<em>clk</em>, <a class="reference internal" href="#_CPPv337metal_clock_post_rate_change_callback" title="metal_clock_post_rate_change_callback">metal_clock_post_rate_change_callback</a> <em>cb</em>, void *<em>priv</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv346metal_clock_register_post_rate_change_callbackPK11metal_clock37metal_clock_post_rate_change_callbackPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Registers a callback that must be called after a rate change. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
@@ -130,6 +130,14 @@
 <dd><em>#include &lt;clock.h&gt;</em><p>The handle for a clock. </p>
 <p>Clocks are defined as a pointer to a <code class="docutils literal notranslate"><span class="pre">struct</span> <a class="reference internal" href="#structmetal__clock"><span class="std std-ref"><span class="pre">metal_clock</span></span></a></code>, the contents of which are implementation defined. Users of the clock interface must call functions which accept a <code class="docutils literal notranslate"><span class="pre">struct</span> <a class="reference internal" href="#structmetal__clock"><span class="std std-ref"><span class="pre">metal_clock</span></span></a> <span class="pre">*</span></code> as an argument to interract with the clock.</p>
 <p>Note that no mechanism for obtaining a pointer to a <code class="docutils literal notranslate"><span class="pre">struct</span> <a class="reference internal" href="#structmetal__clock"><span class="std std-ref"><span class="pre">metal_clock</span></span></a></code> has been defined, making it impossible to call any of these functions without invoking implementation-defined behavior. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="member">
+<dt id="_CPPv3N11metal_clock4dataE">
+<span id="_CPPv2N11metal_clock4dataE"></span><span id="metal_clock::data____metal_clock_dataP"></span><span class="target" id="structmetal__clock_1af544d5310dde0dd59cb0220175602be6"></span><em class="property">struct</em> __metal_clock_data *<code class="descname">data</code><a class="headerlink" href="#_CPPv3N11metal_clock4dataE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
 </dd></dl>
 
 </div>
@@ -156,8 +164,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../devguide.html">Developer Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="button.html">Buttons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html">Caches</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Clocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpu.html">CPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="itim.html">ITIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="led.html">LEDs</a></li>
@@ -177,7 +187,7 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="../api.html">API Reference</a><ul>
-      <li>Previous: <a href="button.html" title="previous chapter">Buttons</a></li>
+      <li>Previous: <a href="cache.html" title="previous chapter">Caches</a></li>
       <li>Next: <a href="cpu.html" title="next chapter">CPU</a></li>
   </ul></li>
   </ul></li>

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PMPs &#8212; Freedom Metal v0.1.2-104-g23d01fd documentation</title>
+    <title>PMPs &#8212; Freedom Metal v0.1.2-126-g653d2d1 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -78,13 +78,13 @@
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="function">
 <dt id="_CPPv320metal_pmp_get_devicev">
-<span id="_CPPv220metal_pmp_get_devicev"></span><span id="metal_pmp_get_device__void"></span><span class="target" id="pmp_8h_1a285362cb084160ce14af26d75f9116f5"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<code class="descname">metal_pmp_get_device</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_pmp_get_devicev" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv220metal_pmp_get_devicev"></span><span id="metal_pmp_get_device__void"></span><span class="target" id="pmp_8h_1ade580ba5eae084dc3a17fc5332a3d8aa"></span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<code class="descname">metal_pmp_get_device</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_pmp_get_devicev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the PMP device handle. </p>
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv314metal_pmp_initP9metal_pmp">
-<span id="_CPPv214metal_pmp_initP9metal_pmp"></span><span id="metal_pmp_init__metal_pmpP"></span><span class="target" id="pmp_8h_1a27f187e13bd7100571a7a404bd0a0f06"></span>void <code class="descname">metal_pmp_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314metal_pmp_initP9metal_pmp" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv314metal_pmp_initPK9metal_pmp">
+<span id="_CPPv214metal_pmp_initPK9metal_pmp"></span><span id="metal_pmp_init__metal_pmpCP"></span><span class="target" id="pmp_8h_1a8f6e22396561b8a459c9553a04cbd734"></span>void <code class="descname">metal_pmp_init</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314metal_pmp_initPK9metal_pmp" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initialize the PMP. </p>
 <p><p>The PMP initialization routine is optional and may be called as many times as is desired. The effect of the initialization routine is to attempt to set all regions to unlocked and disabled, as well as to clear the X, W, and R bits.</p>
 <dl class="docutils">
@@ -99,8 +99,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv320metal_pmp_set_regionP9metal_pmpj16metal_pmp_config6size_t">
-<span id="_CPPv220metal_pmp_set_regionP9metal_pmpj16metal_pmp_config6size_t"></span><span id="metal_pmp_set_region__metal_pmpP.unsigned-i.metal_pmp_config.s"></span><span class="target" id="pmp_8h_1acdbdbc7cc2727d4ae10205617aee3013"></span>int <code class="descname">metal_pmp_set_region</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, <em class="property">struct</em> <a class="reference internal" href="#_CPPv316metal_pmp_config" title="metal_pmp_config">metal_pmp_config</a> <em>config</em>, size_t <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_pmp_set_regionP9metal_pmpj16metal_pmp_config6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv320metal_pmp_set_regionPK9metal_pmpjK16metal_pmp_config6size_t">
+<span id="_CPPv220metal_pmp_set_regionPK9metal_pmpjK16metal_pmp_config6size_t"></span><span id="metal_pmp_set_region__metal_pmpCP.unsigned-i.metal_pmp_configC.s"></span><span class="target" id="pmp_8h_1a5618974b30f98ec008d987bdc7cc44e7"></span>int <code class="descname">metal_pmp_set_region</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, <em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv316metal_pmp_config" title="metal_pmp_config">metal_pmp_config</a> <em>config</em>, size_t <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_pmp_set_regionPK9metal_pmpjK16metal_pmp_config6size_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Configure a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -118,8 +118,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv320metal_pmp_get_regionP9metal_pmpjP16metal_pmp_configP6size_t">
-<span id="_CPPv220metal_pmp_get_regionP9metal_pmpjP16metal_pmp_configP6size_t"></span><span id="metal_pmp_get_region__metal_pmpP.unsigned-i.metal_pmp_configP.sP"></span><span class="target" id="pmp_8h_1a638771730de250707e03355a20eba302"></span>int <code class="descname">metal_pmp_get_region</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, <em class="property">struct</em> <a class="reference internal" href="#_CPPv316metal_pmp_config" title="metal_pmp_config">metal_pmp_config</a> *<em>config</em>, size_t *<em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_pmp_get_regionP9metal_pmpjP16metal_pmp_configP6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv320metal_pmp_get_regionPK9metal_pmpjP16metal_pmp_configP6size_t">
+<span id="_CPPv220metal_pmp_get_regionPK9metal_pmpjP16metal_pmp_configP6size_t"></span><span id="metal_pmp_get_region__metal_pmpCP.unsigned-i.metal_pmp_configP.sP"></span><span class="target" id="pmp_8h_1ac4b791d0a98af8bf953fff44aff48447"></span>int <code class="descname">metal_pmp_get_region</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, <em class="property">struct</em> <a class="reference internal" href="#_CPPv316metal_pmp_config" title="metal_pmp_config">metal_pmp_config</a> *<em>config</em>, size_t *<em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_pmp_get_regionPK9metal_pmpjP16metal_pmp_configP6size_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the configuration for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -137,8 +137,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv314metal_pmp_lockP9metal_pmpj">
-<span id="_CPPv214metal_pmp_lockP9metal_pmpj"></span><span id="metal_pmp_lock__metal_pmpP.unsigned-i"></span><span class="target" id="pmp_8h_1a6a3fa4e30f321f322e5327c5626298a6"></span>int <code class="descname">metal_pmp_lock</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314metal_pmp_lockP9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv314metal_pmp_lockPK9metal_pmpj">
+<span id="_CPPv214metal_pmp_lockPK9metal_pmpj"></span><span id="metal_pmp_lock__metal_pmpCP.unsigned-i"></span><span class="target" id="pmp_8h_1ad184c405b860ea020d17bd547fd01c0f"></span>int <code class="descname">metal_pmp_lock</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314metal_pmp_lockPK9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Lock a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -154,8 +154,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv321metal_pmp_set_addressP9metal_pmpj6size_t">
-<span id="_CPPv221metal_pmp_set_addressP9metal_pmpj6size_t"></span><span id="metal_pmp_set_address__metal_pmpP.unsigned-i.s"></span><span class="target" id="pmp_8h_1a813aa0c76c58567d72d742ae26413d43"></span>int <code class="descname">metal_pmp_set_address</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, size_t <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321metal_pmp_set_addressP9metal_pmpj6size_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv321metal_pmp_set_addressPK9metal_pmpj6size_t">
+<span id="_CPPv221metal_pmp_set_addressPK9metal_pmpj6size_t"></span><span id="metal_pmp_set_address__metal_pmpCP.unsigned-i.s"></span><span class="target" id="pmp_8h_1a57754f4425841355913ed9a242a40d70"></span>int <code class="descname">metal_pmp_set_address</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, size_t <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321metal_pmp_set_addressPK9metal_pmpj6size_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the address for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -172,8 +172,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv321metal_pmp_get_addressP9metal_pmpj">
-<span id="_CPPv221metal_pmp_get_addressP9metal_pmpj"></span><span id="metal_pmp_get_address__metal_pmpP.unsigned-i"></span><span class="target" id="pmp_8h_1acd173df5015b18af2a24c18db8b4e29d"></span>size_t <code class="descname">metal_pmp_get_address</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321metal_pmp_get_addressP9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv321metal_pmp_get_addressPK9metal_pmpj">
+<span id="_CPPv221metal_pmp_get_addressPK9metal_pmpj"></span><span id="metal_pmp_get_address__metal_pmpCP.unsigned-i"></span><span class="target" id="pmp_8h_1a40305ed8579d990ed2e8883ff9f845cc"></span>size_t <code class="descname">metal_pmp_get_address</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321metal_pmp_get_addressPK9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the address of a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -189,8 +189,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv326metal_pmp_set_address_modeP9metal_pmpj22metal_pmp_address_mode">
-<span id="_CPPv226metal_pmp_set_address_modeP9metal_pmpj22metal_pmp_address_mode"></span><span id="metal_pmp_set_address_mode__metal_pmpP.unsigned-i.metal_pmp_address_mode"></span><span class="target" id="pmp_8h_1af437f62af730b1ced6b024320224b44f"></span>int <code class="descname">metal_pmp_set_address_mode</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, <em class="property">enum</em> <a class="reference internal" href="#_CPPv322metal_pmp_address_mode" title="metal_pmp_address_mode">metal_pmp_address_mode</a> <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_pmp_set_address_modeP9metal_pmpj22metal_pmp_address_mode" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv326metal_pmp_set_address_modePK9metal_pmpj22metal_pmp_address_mode">
+<span id="_CPPv226metal_pmp_set_address_modePK9metal_pmpj22metal_pmp_address_mode"></span><span id="metal_pmp_set_address_mode__metal_pmpCP.unsigned-i.metal_pmp_address_mode"></span><span class="target" id="pmp_8h_1abaffa0778544fcd065dbb58dbb73ed74"></span>int <code class="descname">metal_pmp_set_address_mode</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, <em class="property">enum</em> <a class="reference internal" href="#_CPPv322metal_pmp_address_mode" title="metal_pmp_address_mode">metal_pmp_address_mode</a> <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_pmp_set_address_modePK9metal_pmpj22metal_pmp_address_mode" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the addressing mode of a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -207,8 +207,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv326metal_pmp_get_address_modeP9metal_pmpj">
-<span id="_CPPv226metal_pmp_get_address_modeP9metal_pmpj"></span><span id="metal_pmp_get_address_mode__metal_pmpP.unsigned-i"></span><span class="target" id="pmp_8h_1ae8bf626c403ce2f5d9647e900becc479"></span><em class="property">enum</em> <a class="reference internal" href="#_CPPv322metal_pmp_address_mode" title="metal_pmp_address_mode">metal_pmp_address_mode</a> <code class="descname">metal_pmp_get_address_mode</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_pmp_get_address_modeP9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv326metal_pmp_get_address_modePK9metal_pmpj">
+<span id="_CPPv226metal_pmp_get_address_modePK9metal_pmpj"></span><span id="metal_pmp_get_address_mode__metal_pmpCP.unsigned-i"></span><span class="target" id="pmp_8h_1a4c3491a9ab42188d05bd4489a6f2e8f1"></span><em class="property">enum</em> <a class="reference internal" href="#_CPPv322metal_pmp_address_mode" title="metal_pmp_address_mode">metal_pmp_address_mode</a> <code class="descname">metal_pmp_get_address_mode</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_pmp_get_address_modePK9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the addressing mode of a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -224,8 +224,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv324metal_pmp_set_executableP9metal_pmpji">
-<span id="_CPPv224metal_pmp_set_executableP9metal_pmpji"></span><span id="metal_pmp_set_executable__metal_pmpP.unsigned-i.i"></span><span class="target" id="pmp_8h_1a7ca9b72029d7ece4c1f0411fa30ce200"></span>int <code class="descname">metal_pmp_set_executable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, int <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324metal_pmp_set_executableP9metal_pmpji" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv324metal_pmp_set_executablePK9metal_pmpji">
+<span id="_CPPv224metal_pmp_set_executablePK9metal_pmpji"></span><span id="metal_pmp_set_executable__metal_pmpCP.unsigned-i.i"></span><span class="target" id="pmp_8h_1a92f82c41076b0795518c03cc03900085"></span>int <code class="descname">metal_pmp_set_executable</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, int <em>X</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324metal_pmp_set_executablePK9metal_pmpji" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the executable bit for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -242,8 +242,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv324metal_pmp_get_executableP9metal_pmpj">
-<span id="_CPPv224metal_pmp_get_executableP9metal_pmpj"></span><span id="metal_pmp_get_executable__metal_pmpP.unsigned-i"></span><span class="target" id="pmp_8h_1a25cca706020249225e12244146ae561b"></span>int <code class="descname">metal_pmp_get_executable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324metal_pmp_get_executableP9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv324metal_pmp_get_executablePK9metal_pmpj">
+<span id="_CPPv224metal_pmp_get_executablePK9metal_pmpj"></span><span id="metal_pmp_get_executable__metal_pmpCP.unsigned-i"></span><span class="target" id="pmp_8h_1ae1aa4940f5f1bc62893e974dcb062629"></span>int <code class="descname">metal_pmp_get_executable</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv324metal_pmp_get_executablePK9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the executable bit for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -259,8 +259,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv323metal_pmp_set_writeableP9metal_pmpji">
-<span id="_CPPv223metal_pmp_set_writeableP9metal_pmpji"></span><span id="metal_pmp_set_writeable__metal_pmpP.unsigned-i.i"></span><span class="target" id="pmp_8h_1a64007037321db518728f354a3517ef30"></span>int <code class="descname">metal_pmp_set_writeable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, int <em>W</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_pmp_set_writeableP9metal_pmpji" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv323metal_pmp_set_writeablePK9metal_pmpji">
+<span id="_CPPv223metal_pmp_set_writeablePK9metal_pmpji"></span><span id="metal_pmp_set_writeable__metal_pmpCP.unsigned-i.i"></span><span class="target" id="pmp_8h_1a3c56102fe0b98d60843f25f20ab0d656"></span>int <code class="descname">metal_pmp_set_writeable</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, int <em>W</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_pmp_set_writeablePK9metal_pmpji" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the writable bit for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -277,8 +277,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv323metal_pmp_get_writeableP9metal_pmpj">
-<span id="_CPPv223metal_pmp_get_writeableP9metal_pmpj"></span><span id="metal_pmp_get_writeable__metal_pmpP.unsigned-i"></span><span class="target" id="pmp_8h_1a53515b1abf4a9738170747b17d9415e1"></span>int <code class="descname">metal_pmp_get_writeable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_pmp_get_writeableP9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv323metal_pmp_get_writeablePK9metal_pmpj">
+<span id="_CPPv223metal_pmp_get_writeablePK9metal_pmpj"></span><span id="metal_pmp_get_writeable__metal_pmpCP.unsigned-i"></span><span class="target" id="pmp_8h_1a536ed074368ab19cf6e59443b846fa10"></span>int <code class="descname">metal_pmp_get_writeable</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_pmp_get_writeablePK9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the writable bit for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -294,8 +294,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv322metal_pmp_set_readableP9metal_pmpji">
-<span id="_CPPv222metal_pmp_set_readableP9metal_pmpji"></span><span id="metal_pmp_set_readable__metal_pmpP.unsigned-i.i"></span><span class="target" id="pmp_8h_1a6bd197dc75911ef545ee9ba434a147fc"></span>int <code class="descname">metal_pmp_set_readable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, int <em>R</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322metal_pmp_set_readableP9metal_pmpji" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv322metal_pmp_set_readablePK9metal_pmpji">
+<span id="_CPPv222metal_pmp_set_readablePK9metal_pmpji"></span><span id="metal_pmp_set_readable__metal_pmpCP.unsigned-i.i"></span><span class="target" id="pmp_8h_1a4c9ee571e7798ff4dbf612189611695c"></span>int <code class="descname">metal_pmp_set_readable</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, int <em>R</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322metal_pmp_set_readablePK9metal_pmpji" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the readable bit for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -312,8 +312,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv322metal_pmp_get_readableP9metal_pmpj">
-<span id="_CPPv222metal_pmp_get_readableP9metal_pmpj"></span><span id="metal_pmp_get_readable__metal_pmpP.unsigned-i"></span><span class="target" id="pmp_8h_1a7962720fc55049422ae70a58c3bf30a1"></span>int <code class="descname">metal_pmp_get_readable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322metal_pmp_get_readableP9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv322metal_pmp_get_readablePK9metal_pmpj">
+<span id="_CPPv222metal_pmp_get_readablePK9metal_pmpj"></span><span id="metal_pmp_get_readable__metal_pmpCP.unsigned-i"></span><span class="target" id="pmp_8h_1a7fd3b994a951116e8de4af84a2e2b88b"></span>int <code class="descname">metal_pmp_get_readable</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322metal_pmp_get_readablePK9metal_pmpj" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the readable bit for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -426,8 +426,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../devguide.html">Developer Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="button.html">Buttons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html">Caches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clock.html">Clocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpu.html">CPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="itim.html">ITIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="led.html">LEDs</a></li>

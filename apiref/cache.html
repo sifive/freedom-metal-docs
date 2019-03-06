@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Shutdown &#8212; Freedom Metal v0.1.2-126-g653d2d1 documentation</title>
+    <title>Caches &#8212; Freedom Metal v0.1.2-126-g653d2d1 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -17,8 +17,8 @@
     <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="SPIs" href="spi.html" />
-    <link rel="prev" title="PMPs" href="pmp.html" />
+    <link rel="next" title="Clocks" href="clock.html" />
+    <link rel="prev" title="Buttons" href="button.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -35,20 +35,54 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="shutdown">
-<h1>Shutdown<a class="headerlink" href="#shutdown" title="Permalink to this headline">¶</a></h1>
-<p>API for shutting down a machine. </p>
+  <div class="section" id="caches">
+<h1>Caches<a class="headerlink" href="#caches" title="Permalink to this headline">¶</a></h1>
+<p>API for configuring caches. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="function">
-<dt id="_CPPv314metal_shutdowni">
-<span id="_CPPv214metal_shutdowni"></span><span id="metal_shutdown__i"></span><span class="target" id="shutdown_8h_1a74aef1a3586fadbfb031b655308fcf12"></span>void <code class="descname">metal_shutdown</code><span class="sig-paren">(</span>int <em>code</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314metal_shutdowni" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>The public METAL shutdown interface. </p>
-<p>Shuts down the machine, if the machine enables an interface for shutting down. When no interface is provided, will cause the machine to spin indefinitely.</p>
-<p><dl class="docutils">
+<dt id="_CPPv316metal_cache_initP11metal_cachei">
+<span id="_CPPv216metal_cache_initP11metal_cachei"></span><span id="metal_cache_init__metal_cacheP.i"></span><span class="target" id="cache_8h_1a7a302291f2168c036f92cf72f44ba89d"></span>void <code class="descname">metal_cache_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em>, int <em>ways</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316metal_cache_initP11metal_cachei" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize a cache. </p>
+<p><p>Initializes a cache with the requested number of ways enabled. </p>
+<dl class="docutils">
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">code</span></code>: The return code to set. 0 indicates program success. </li>
+<li><code class="docutils literal notranslate"><span class="pre">cache</span></code>: The handle for the cache to initialize </li>
+<li><code class="docutils literal notranslate"><span class="pre">ways</span></code>: The number of ways to enable</li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328metal_cache_get_enabled_waysP11metal_cache">
+<span id="_CPPv228metal_cache_get_enabled_waysP11metal_cache"></span><span id="metal_cache_get_enabled_ways__metal_cacheP"></span><span class="target" id="cache_8h_1a4533d6c4cbe55f440d28c28b9adfea80"></span>int <code class="descname">metal_cache_get_enabled_ways</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cache_get_enabled_waysP11metal_cache" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the current number of enabled cache ways. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>The current number of enabled cache ways </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">cache</span></code>: The handle for the cache </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv328metal_cache_set_enabled_waysP11metal_cachei">
+<span id="_CPPv228metal_cache_set_enabled_waysP11metal_cachei"></span><span id="metal_cache_set_enabled_ways__metal_cacheP.i"></span><span class="target" id="cache_8h_1aef6fe740ef5b57b0784e0e19e3219a8e"></span>int <code class="descname">metal_cache_set_enabled_ways</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em>, int <em>ways</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cache_set_enabled_waysP11metal_cachei" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable the requested number of cache ways. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>0 if the ways are successfully enabled </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">cache</span></code>: The handle for the cache </li>
+<li><code class="docutils literal notranslate"><span class="pre">ways</span></code>: The number of ways to enabled </li>
 </ul>
 </dd>
 </dl>
@@ -56,6 +90,12 @@
 </dd></dl>
 
 </div>
+<dl class="class">
+<dt id="_CPPv311metal_cache">
+<span id="_CPPv211metal_cache"></span><span id="metal_cache"></span><span class="target" id="structmetal__cache"></span><em class="property">struct </em><code class="descname">metal_cache</code><a class="headerlink" href="#_CPPv311metal_cache" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;cache.h&gt;</em><p>a handle for a cache </p>
+</dd></dl>
+
 </div>
 
 
@@ -80,7 +120,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../devguide.html">Developer Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="button.html">Buttons</a></li>
-<li class="toctree-l2"><a class="reference internal" href="cache.html">Caches</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Caches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clock.html">Clocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpu.html">CPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO</a></li>
@@ -88,7 +128,7 @@
 <li class="toctree-l2"><a class="reference internal" href="itim.html">ITIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="led.html">LEDs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pmp.html">PMPs</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Shutdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shutdown.html">Shutdown</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spi.html">SPIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="switch.html">Switches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="timer.html">Timer API</a></li>
@@ -103,8 +143,8 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="../api.html">API Reference</a><ul>
-      <li>Previous: <a href="pmp.html" title="previous chapter">PMPs</a></li>
-      <li>Next: <a href="spi.html" title="next chapter">SPIs</a></li>
+      <li>Previous: <a href="button.html" title="previous chapter">Buttons</a></li>
+      <li>Next: <a href="clock.html" title="next chapter">Clocks</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -133,7 +173,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |
-      <a href="../_sources/apiref/shutdown.rst.txt"
+      <a href="../_sources/apiref/cache.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
