@@ -6,15 +6,13 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Interrupt Handlers &#8212; Freedom Metal v0.1.2-126-g653d2d1 documentation</title>
+    <title>Interrupt Handlers &#8212; Freedom Metal v201903 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Instruction Tightly Integrated Memory" href="itim.html" />
@@ -53,7 +51,7 @@ by the target’s DeviceTree representation, which can be found in
 </dd></dl>
 
 <p>And the vertices of the tree consist of interrupt <code class="docutils literal notranslate"><span class="pre">id</span></code>.</p>
-<div class="graphviz"><img src="../_images/graphviz-f1352e5b6e8a42a0df452853417ee7221b13195f.png" alt="digraph int_heirarchy_graph {
+<img src="../_images/graphviz-4e69a35c14995622b7f966825bca72b81124fc03.png" alt="digraph int_heirarchy_graph {
 cpu [label=&quot;CPU&quot;];
 cpu_int [label=&quot;CPU Interrupt Controller&quot;, shape=box];
 timer_int [label=&quot;Timer Interrupt Controller&quot;, shape=box];
@@ -62,7 +60,7 @@ soft_int [label=&quot;Software Interrupt Controller&quot;, shape=box];
 cpu -&gt; cpu_int [label=&quot;ID = 0&quot;];
 cpu_int -&gt; timer_int [label=&quot;ID = timer_id&quot;];
 cpu_int -&gt; soft_int [label=&quot;ID = software_id&quot;];
-}" class="graphviz" /></div>
+}" />
 </div>
 <div class="section" id="the-cpu-interrupt-controller">
 <h2>The CPU Interrupt Controller<a class="headerlink" href="#the-cpu-interrupt-controller" title="Permalink to this headline">¶</a></h2>
@@ -201,7 +199,7 @@ they are servicing. For example, if we want to register a CPU timer interrupt:</
       &copy;2019, SiFive Inc..
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |

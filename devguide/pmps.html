@@ -6,15 +6,13 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Physical Memory Protection &#8212; Freedom Metal v0.1.2-126-g653d2d1 documentation</title>
+    <title>Physical Memory Protection &#8212; Freedom Metal v201903 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Standard I/O" href="tty.html" />
@@ -132,8 +130,8 @@ if possible:</p>
 <p>Freedom Metal has a set of APIs for configuring a PMP region. The most generic of these
 is</p>
 <dl class="function">
-<dt id="_CPPv320metal_pmp_set_regionPK9metal_pmpjK16metal_pmp_config6size_t">
-<span id="_CPPv220metal_pmp_set_regionPK9metal_pmpjK16metal_pmp_config6size_t"></span><span id="metal_pmp_set_region__metal_pmpCP.unsigned-i.metal_pmp_configC.s"></span><span class="target" id="pmp_8h_1a5618974b30f98ec008d987bdc7cc44e7"></span>int <code class="descname">metal_pmp_set_region</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, <em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv316metal_pmp_config" title="metal_pmp_config">metal_pmp_config</a> <em>config</em>, size_t <em>address</em><span class="sig-paren">)</span><br /></dt>
+<dt id="_CPPv320metal_pmp_set_regionP9metal_pmpj16metal_pmp_config6size_t">
+<span id="_CPPv220metal_pmp_set_regionP9metal_pmpj16metal_pmp_config6size_t"></span><span id="metal_pmp_set_region__metal_pmpP.unsigned-i.metal_pmp_config.s"></span><span class="target" id="pmp_8h_1acdbdbc7cc2727d4ae10205617aee3013"></span>int <code class="descname">metal_pmp_set_region</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, <em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv316metal_pmp_config" title="metal_pmp_config">metal_pmp_config</a> <em>config</em>, size_t <em>address</em><span class="sig-paren">)</span><br /></dt>
 <dd><p>Configure a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -155,7 +153,7 @@ is</p>
 For example:</p>
 <dl class="function">
 <dt>
-int <code class="descname">metal_pmp_set_address</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, size_t <em>address</em><span class="sig-paren">)</span><br /></dt>
+int <code class="descname">metal_pmp_set_address</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, size_t <em>address</em><span class="sig-paren">)</span><br /></dt>
 <dd><p>Set the address for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -173,7 +171,7 @@ int <code class="descname">metal_pmp_set_address</code><span class="sig-paren">(
 
 <dl class="function">
 <dt>
-int <code class="descname">metal_pmp_lock</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><br /></dt>
+int <code class="descname">metal_pmp_lock</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em><span class="sig-paren">)</span><br /></dt>
 <dd><p>Lock a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -190,7 +188,7 @@ int <code class="descname">metal_pmp_lock</code><span class="sig-paren">(</span>
 
 <dl class="function">
 <dt>
-int <code class="descname">metal_pmp_set_writeable</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, int <em>W</em><span class="sig-paren">)</span><br /></dt>
+int <code class="descname">metal_pmp_set_writeable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="../apiref/pmp.html#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<em>pmp</em>, unsigned int <em>region</em>, int <em>W</em><span class="sig-paren">)</span><br /></dt>
 <dd><p>Set the writable bit for a PMP region. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -288,7 +286,7 @@ handling on RISC-V systems can be found in
       &copy;2019, SiFive Inc..
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |

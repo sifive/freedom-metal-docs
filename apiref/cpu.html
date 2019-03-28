@@ -6,15 +6,13 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>CPU &#8212; Freedom Metal v0.1.2-126-g653d2d1 documentation</title>
+    <title>CPU &#8212; Freedom Metal v201903 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="GPIO" href="gpio.html" />
@@ -42,7 +40,7 @@
 <p class="breathe-sectiondef-title rubric">Typedefs</p>
 <dl class="type">
 <dt id="_CPPv325metal_exception_handler_t">
-<span id="_CPPv225metal_exception_handler_t"></span><span id="metal_exception_handler_t"></span><span class="target" id="cpu_8h_1a51e9841aadaa7ebb051ebb9a3b1628c1"></span><em class="property">typedef </em>void (*<code class="descname">metal_exception_handler_t</code>)<span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *cpu, int ecode<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325metal_exception_handler_t" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv225metal_exception_handler_t"></span><span id="metal_exception_handler_t"></span><span class="target" id="cpu_8h_1ab3b821a3347e5837b93dd66bc4241c04"></span><em class="property">typedef </em>void (*<code class="descname">metal_exception_handler_t</code>)<span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *cpu, int ecode<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325metal_exception_handler_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Function signature for exception handlers. </p>
 </dd></dl>
 
@@ -51,7 +49,7 @@
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="function">
 <dt id="_CPPv313metal_cpu_geti">
-<span id="_CPPv213metal_cpu_geti"></span><span id="metal_cpu_get__i"></span><span class="target" id="cpu_8h_1aeaba9bb621946e64067fcfc51038cfa5"></span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<code class="descname">metal_cpu_get</code><span class="sig-paren">(</span>int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313metal_cpu_geti" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv213metal_cpu_geti"></span><span id="metal_cpu_get__i"></span><span class="target" id="cpu_8h_1a58fa45251558db18418b134a683cdd73"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<code class="descname">metal_cpu_get</code><span class="sig-paren">(</span>int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv313metal_cpu_geti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get a reference to a CPU hart. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -66,8 +64,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv319metal_cpu_get_timerPK9metal_cpu">
-<span id="_CPPv219metal_cpu_get_timerPK9metal_cpu"></span><span id="metal_cpu_get_timer__metal_cpuCP"></span><span class="target" id="cpu_8h_1a162440f5579db58e2613b0132b6a46a4"></span>unsigned long long <code class="descname">metal_cpu_get_timer</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319metal_cpu_get_timerPK9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv319metal_cpu_get_timerP9metal_cpu">
+<span id="_CPPv219metal_cpu_get_timerP9metal_cpu"></span><span id="metal_cpu_get_timer__metal_cpuP"></span><span class="target" id="cpu_8h_1af09d00acc3427561377eca87a490e3b8"></span>unsigned long long <code class="descname">metal_cpu_get_timer</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319metal_cpu_get_timerP9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the CPU cycle count timer value. </p>
 <p>Get the value of the cycle count timer for a given CPU</p>
 <p><dl class="docutils">
@@ -83,8 +81,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv322metal_cpu_get_timebasePK9metal_cpu">
-<span id="_CPPv222metal_cpu_get_timebasePK9metal_cpu"></span><span id="metal_cpu_get_timebase__metal_cpuCP"></span><span class="target" id="cpu_8h_1a905e7e1b5b285c153d0866a470b90d65"></span>unsigned long long <code class="descname">metal_cpu_get_timebase</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322metal_cpu_get_timebasePK9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv322metal_cpu_get_timebaseP9metal_cpu">
+<span id="_CPPv222metal_cpu_get_timebaseP9metal_cpu"></span><span id="metal_cpu_get_timebase__metal_cpuP"></span><span class="target" id="cpu_8h_1a956ea1dcf430e521a9decc2d03f5702e"></span>unsigned long long <code class="descname">metal_cpu_get_timebase</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322metal_cpu_get_timebaseP9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the timebase of the CPU. </p>
 <p>Get the value of the timebase of the cycle count timer</p>
 <p><dl class="docutils">
@@ -100,8 +98,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv319metal_cpu_get_mtimePK9metal_cpu">
-<span id="_CPPv219metal_cpu_get_mtimePK9metal_cpu"></span><span id="metal_cpu_get_mtime__metal_cpuCP"></span><span class="target" id="cpu_8h_1ab931d5ed8dd1083d8e596e44fc08c454"></span>unsigned long long <code class="descname">metal_cpu_get_mtime</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319metal_cpu_get_mtimePK9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv319metal_cpu_get_mtimeP9metal_cpu">
+<span id="_CPPv219metal_cpu_get_mtimeP9metal_cpu"></span><span id="metal_cpu_get_mtime__metal_cpuP"></span><span class="target" id="cpu_8h_1a1604e203ea89d64aea90db373ee47db9"></span>unsigned long long <code class="descname">metal_cpu_get_mtime</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319metal_cpu_get_mtimeP9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the value of the mtime RTC. </p>
 <p>Get the value of the mtime real-time clock. The CPU interrupt controller must be initialized before this function is called or the return value will be 0.</p>
 <p><dl class="docutils">
@@ -117,8 +115,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv322metal_cpu_set_mtimecmpPK9metal_cpuy">
-<span id="_CPPv222metal_cpu_set_mtimecmpPK9metal_cpuy"></span><span id="metal_cpu_set_mtimecmp__metal_cpuCP.unsigned-l-l"></span><span class="target" id="cpu_8h_1a8fe829a114b973c6657f9a3e19be7768"></span>int <code class="descname">metal_cpu_set_mtimecmp</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, unsigned long long <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322metal_cpu_set_mtimecmpPK9metal_cpuy" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv322metal_cpu_set_mtimecmpP9metal_cpuy">
+<span id="_CPPv222metal_cpu_set_mtimecmpP9metal_cpuy"></span><span id="metal_cpu_set_mtimecmp__metal_cpuP.unsigned-l-l"></span><span class="target" id="cpu_8h_1ae247e1a5d11de5b5fb62ccd8a220811b"></span>int <code class="descname">metal_cpu_set_mtimecmp</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, unsigned long long <em>time</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322metal_cpu_set_mtimecmpP9metal_cpuy" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the value of the RTC mtimecmp RTC. </p>
 <p>Set the value of the mtime real-time clock compare register. The CPU interrupt controller must be initialized before this function is called or the return value will be -1;</p>
 <p><dl class="docutils">
@@ -135,8 +133,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv336metal_cpu_timer_interrupt_controllerPK9metal_cpu">
-<span id="_CPPv236metal_cpu_timer_interrupt_controllerPK9metal_cpu"></span><span id="metal_cpu_timer_interrupt_controller__metal_cpuCP"></span><span class="target" id="cpu_8h_1af3b1ef04e3a22ef65a5ec0a24871712b"></span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_cpu_timer_interrupt_controller</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv336metal_cpu_timer_interrupt_controllerPK9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv336metal_cpu_timer_interrupt_controllerP9metal_cpu">
+<span id="_CPPv236metal_cpu_timer_interrupt_controllerP9metal_cpu"></span><span id="metal_cpu_timer_interrupt_controller__metal_cpuP"></span><span class="target" id="cpu_8h_1a0b7c5786baf6b8061fd1a547a5eeacde"></span><em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_cpu_timer_interrupt_controller</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv336metal_cpu_timer_interrupt_controllerP9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get a reference to RTC timer interrupt controller. </p>
 <p>Get a reference to the interrupt controller for the real-time clock interrupt. The controller returned by this function must be initialized before any interrupts are registered or enabled with it.</p>
 <p><dl class="docutils">
@@ -152,8 +150,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv332metal_cpu_timer_get_interrupt_idPK9metal_cpu">
-<span id="_CPPv232metal_cpu_timer_get_interrupt_idPK9metal_cpu"></span><span id="metal_cpu_timer_get_interrupt_id__metal_cpuCP"></span><span class="target" id="cpu_8h_1abb48cbb830a0e607ea4726fe5685afc9"></span>int <code class="descname">metal_cpu_timer_get_interrupt_id</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv332metal_cpu_timer_get_interrupt_idPK9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv332metal_cpu_timer_get_interrupt_idP9metal_cpu">
+<span id="_CPPv232metal_cpu_timer_get_interrupt_idP9metal_cpu"></span><span id="metal_cpu_timer_get_interrupt_id__metal_cpuP"></span><span class="target" id="cpu_8h_1aa869758382135c29d4423e140a6ab5ca"></span>int <code class="descname">metal_cpu_timer_get_interrupt_id</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv332metal_cpu_timer_get_interrupt_idP9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the RTC timer interrupt id. </p>
 <p>Get the interrupt ID of the real-time clock interrupt</p>
 <p><dl class="docutils">
@@ -169,8 +167,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv339metal_cpu_software_interrupt_controllerPK9metal_cpu">
-<span id="_CPPv239metal_cpu_software_interrupt_controllerPK9metal_cpu"></span><span id="metal_cpu_software_interrupt_controller__metal_cpuCP"></span><span class="target" id="cpu_8h_1a412dd2f7f0c4d4c5f74edb90b89dc067"></span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_cpu_software_interrupt_controller</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv339metal_cpu_software_interrupt_controllerPK9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv339metal_cpu_software_interrupt_controllerP9metal_cpu">
+<span id="_CPPv239metal_cpu_software_interrupt_controllerP9metal_cpu"></span><span id="metal_cpu_software_interrupt_controller__metal_cpuP"></span><span class="target" id="cpu_8h_1a6da4e5c6acefc5bf7de9ff2e57dfd0e9"></span><em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_cpu_software_interrupt_controller</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv339metal_cpu_software_interrupt_controllerP9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get a reference to the software interrupt controller. </p>
 <p>Get a reference to the interrupt controller for the software/inter-process interrupt. The controller returned by this function must be initialized before any interrupts are registered or enabled with it.</p>
 <p><dl class="docutils">
@@ -186,8 +184,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv335metal_cpu_software_get_interrupt_idPK9metal_cpu">
-<span id="_CPPv235metal_cpu_software_get_interrupt_idPK9metal_cpu"></span><span id="metal_cpu_software_get_interrupt_id__metal_cpuCP"></span><span class="target" id="cpu_8h_1aa4a958b7ef1f189a74ba6a77a11f1e25"></span>int <code class="descname">metal_cpu_software_get_interrupt_id</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv335metal_cpu_software_get_interrupt_idPK9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv335metal_cpu_software_get_interrupt_idP9metal_cpu">
+<span id="_CPPv235metal_cpu_software_get_interrupt_idP9metal_cpu"></span><span id="metal_cpu_software_get_interrupt_id__metal_cpuP"></span><span class="target" id="cpu_8h_1a769bddcc0299a2e0c5d9311b67ea27f6"></span>int <code class="descname">metal_cpu_software_get_interrupt_id</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv335metal_cpu_software_get_interrupt_idP9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the software interrupt id. </p>
 <p>Get the interrupt ID for the software/inter-process interrupt</p>
 <p><dl class="docutils">
@@ -203,8 +201,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv326metal_cpu_software_set_ipiPK9metal_cpui">
-<span id="_CPPv226metal_cpu_software_set_ipiPK9metal_cpui"></span><span id="metal_cpu_software_set_ipi__metal_cpuCP.i"></span><span class="target" id="cpu_8h_1a5c9f2964bedc181af51f7a5dceffe3a0"></span>int <code class="descname">metal_cpu_software_set_ipi</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_cpu_software_set_ipiPK9metal_cpui" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv326metal_cpu_software_set_ipiP9metal_cpui">
+<span id="_CPPv226metal_cpu_software_set_ipiP9metal_cpui"></span><span id="metal_cpu_software_set_ipi__metal_cpuP.i"></span><span class="target" id="cpu_8h_1a89985746d60165e79e922b0cd9ef7089"></span>int <code class="descname">metal_cpu_software_set_ipi</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_cpu_software_set_ipiP9metal_cpui" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the inter-process interrupt for a hart. </p>
 <p>Trigger a software/inter-process interrupt for a hart. The CPU interrupt controller for the CPU handle passed to this function must be initialized before this function is called.</p>
 <p><dl class="docutils">
@@ -221,8 +219,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv328metal_cpu_software_clear_ipiPK9metal_cpui">
-<span id="_CPPv228metal_cpu_software_clear_ipiPK9metal_cpui"></span><span id="metal_cpu_software_clear_ipi__metal_cpuCP.i"></span><span class="target" id="cpu_8h_1a56b55ab90e654d1e277e2100a46c6b80"></span>int <code class="descname">metal_cpu_software_clear_ipi</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cpu_software_clear_ipiPK9metal_cpui" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv328metal_cpu_software_clear_ipiP9metal_cpui">
+<span id="_CPPv228metal_cpu_software_clear_ipiP9metal_cpui"></span><span id="metal_cpu_software_clear_ipi__metal_cpuP.i"></span><span class="target" id="cpu_8h_1abbe96b8bcc0f5f8f42f4fc5d7db921f5"></span>int <code class="descname">metal_cpu_software_clear_ipi</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cpu_software_clear_ipiP9metal_cpui" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Clear the inter-process interrupt for a hart. </p>
 <p>Clear the software/inter-process interrupt for a hart. The CPU interrupt controller for the CPU handle passed to this function must be initialized before this function is called.</p>
 <p><dl class="docutils">
@@ -239,8 +237,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv318metal_cpu_get_msipPK9metal_cpui">
-<span id="_CPPv218metal_cpu_get_msipPK9metal_cpui"></span><span id="metal_cpu_get_msip__metal_cpuCP.i"></span><span class="target" id="cpu_8h_1a4a26e5252692e0ec2aa2690584084f8f"></span>int <code class="descname">metal_cpu_get_msip</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318metal_cpu_get_msipPK9metal_cpui" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv318metal_cpu_get_msipP9metal_cpui">
+<span id="_CPPv218metal_cpu_get_msipP9metal_cpui"></span><span id="metal_cpu_get_msip__metal_cpuP.i"></span><span class="target" id="cpu_8h_1ad83d5b139290c308e1ffd678f9784337"></span>int <code class="descname">metal_cpu_get_msip</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318metal_cpu_get_msipP9metal_cpui" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the value of MSIP for the given hart. </p>
 <p>Get the value of the machine software interrupt pending bit for the given hart. The CPU interrupt controller for the CPU handle passed as argument to this function must be initialized before this function is called.</p>
 <p><dl class="docutils">
@@ -257,8 +255,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv330metal_cpu_interrupt_controllerPK9metal_cpu">
-<span id="_CPPv230metal_cpu_interrupt_controllerPK9metal_cpu"></span><span id="metal_cpu_interrupt_controller__metal_cpuCP"></span><span class="target" id="cpu_8h_1ab97cf5e2e2f775159ac62df489383d91"></span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_cpu_interrupt_controller</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330metal_cpu_interrupt_controllerPK9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv330metal_cpu_interrupt_controllerP9metal_cpu">
+<span id="_CPPv230metal_cpu_interrupt_controllerP9metal_cpu"></span><span id="metal_cpu_interrupt_controller__metal_cpuP"></span><span class="target" id="cpu_8h_1aa638acbf63a0087d97350b2a56f9be10"></span><em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_cpu_interrupt_controller</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330metal_cpu_interrupt_controllerP9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the interrupt controller for the CPU. </p>
 <p>Get the CPU interrupt controller. The controller returned by this function must be initialized before any interrupts are registered or enabled and before any exception handlers are registered with this CPU.</p>
 <p><dl class="docutils">
@@ -274,8 +272,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv328metal_cpu_exception_registerPK9metal_cpui25metal_exception_handler_t">
-<span id="_CPPv228metal_cpu_exception_registerPK9metal_cpui25metal_exception_handler_t"></span><span id="metal_cpu_exception_register__metal_cpuCP.i.metal_exception_handler_t"></span><span class="target" id="cpu_8h_1aa673fed1978f9ee58a5ce7eba51f311a"></span>int <code class="descname">metal_cpu_exception_register</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, int <em>ecode</em>, <a class="reference internal" href="#_CPPv325metal_exception_handler_t" title="metal_exception_handler_t">metal_exception_handler_t</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cpu_exception_registerPK9metal_cpui25metal_exception_handler_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv328metal_cpu_exception_registerP9metal_cpui25metal_exception_handler_t">
+<span id="_CPPv228metal_cpu_exception_registerP9metal_cpui25metal_exception_handler_t"></span><span id="metal_cpu_exception_register__metal_cpuP.i.metal_exception_handler_t"></span><span class="target" id="cpu_8h_1a2a8eb3fbb49ea3d25026e3429b0a2ed4"></span>int <code class="descname">metal_cpu_exception_register</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, int <em>ecode</em>, <a class="reference internal" href="#_CPPv325metal_exception_handler_t" title="metal_exception_handler_t">metal_exception_handler_t</a> <em>handler</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cpu_exception_registerP9metal_cpui25metal_exception_handler_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register an exception handler. </p>
 <p>Register an exception handler for the CPU. The CPU interrupt controller must be initialized before this function is called.</p>
 <p><dl class="docutils">
@@ -293,12 +291,12 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv332metal_cpu_get_instruction_lengthPK9metal_cpu9uintptr_t">
-<span id="_CPPv232metal_cpu_get_instruction_lengthPK9metal_cpu9uintptr_t"></span><span id="metal_cpu_get_instruction_length__metal_cpuCP.uintptr_t"></span><span class="target" id="cpu_8h_1a54697d4b0c6c906b69b58247bd03ef85"></span>int <code class="descname">metal_cpu_get_instruction_length</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, uintptr_t <em>epc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv332metal_cpu_get_instruction_lengthPK9metal_cpu9uintptr_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv332metal_cpu_get_instruction_lengthP9metal_cpu9uintptr_t">
+<span id="_CPPv232metal_cpu_get_instruction_lengthP9metal_cpu9uintptr_t"></span><span id="metal_cpu_get_instruction_length__metal_cpuP.uintptr_t"></span><span class="target" id="cpu_8h_1a34d72e90740ee464421d0818c2b0ab65"></span>int <code class="descname">metal_cpu_get_instruction_length</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, uintptr_t <em>epc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv332metal_cpu_get_instruction_lengthP9metal_cpu9uintptr_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the length of an instruction in bytes. </p>
 <p>Get the length of an instruction in bytes.</p>
 <p>On RISC-V platforms, this is useful for detecting whether an instruction is compressed (2 bytes long) or uncompressed (4 bytes long).</p>
-<p>This function is useful in conjuction with <code class="docutils literal notranslate"><a class="reference internal" href="#cpu_8h_1af680a7c6e94344b3a80427c8985c8758"><span class="std std-ref"><span class="pre">metal_cpu_get_exception_pc()</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#cpu_8h_1ab51f6f26d2e5e4122f51fdb3c048e2c0"><span class="std std-ref"><span class="pre">metal_cpu_set_exception_pc()</span></span></a></code> in order to cause the exception handler to return execution after the faulting instruction.</p>
+<p>This function is useful in conjuction with <code class="docutils literal notranslate"><a class="reference internal" href="#cpu_8h_1a10c2615b35debb2fddaa1d514ad9e07c"><span class="std std-ref"><span class="pre">metal_cpu_get_exception_pc()</span></span></a></code> and <code class="docutils literal notranslate"><a class="reference internal" href="#cpu_8h_1a9180f1d340fec263b522b0580ecd389b"><span class="std std-ref"><span class="pre">metal_cpu_set_exception_pc()</span></span></a></code> in order to cause the exception handler to return execution after the faulting instruction.</p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
 <dd>the length of the instruction in bytes </dd>
@@ -313,8 +311,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv326metal_cpu_get_exception_pcPK9metal_cpu">
-<span id="_CPPv226metal_cpu_get_exception_pcPK9metal_cpu"></span><span id="metal_cpu_get_exception_pc__metal_cpuCP"></span><span class="target" id="cpu_8h_1af680a7c6e94344b3a80427c8985c8758"></span>uintptr_t <code class="descname">metal_cpu_get_exception_pc</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_cpu_get_exception_pcPK9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv326metal_cpu_get_exception_pcP9metal_cpu">
+<span id="_CPPv226metal_cpu_get_exception_pcP9metal_cpu"></span><span id="metal_cpu_get_exception_pc__metal_cpuP"></span><span class="target" id="cpu_8h_1a10c2615b35debb2fddaa1d514ad9e07c"></span>uintptr_t <code class="descname">metal_cpu_get_exception_pc</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_cpu_get_exception_pcP9metal_cpu" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the program counter of the current exception. </p>
 <p>This function must be called within an exception handler. The behavior is undefined outside of an exception handler.</p>
 <p><dl class="docutils">
@@ -330,8 +328,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv326metal_cpu_set_exception_pcPK9metal_cpu9uintptr_t">
-<span id="_CPPv226metal_cpu_set_exception_pcPK9metal_cpu9uintptr_t"></span><span id="metal_cpu_set_exception_pc__metal_cpuCP.uintptr_t"></span><span class="target" id="cpu_8h_1ab51f6f26d2e5e4122f51fdb3c048e2c0"></span>int <code class="descname">metal_cpu_set_exception_pc</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, uintptr_t <em>epc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_cpu_set_exception_pcPK9metal_cpu9uintptr_t" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv326metal_cpu_set_exception_pcP9metal_cpu9uintptr_t">
+<span id="_CPPv226metal_cpu_set_exception_pcP9metal_cpu9uintptr_t"></span><span id="metal_cpu_set_exception_pc__metal_cpuP.uintptr_t"></span><span class="target" id="cpu_8h_1a9180f1d340fec263b522b0580ecd389b"></span>int <code class="descname">metal_cpu_set_exception_pc</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_cpu" title="metal_cpu">metal_cpu</a> *<em>cpu</em>, uintptr_t <em>epc</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv326metal_cpu_set_exception_pcP9metal_cpu9uintptr_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the exception program counter. </p>
 <p>This function must be called within an exception handler. The behavior is undefined outside of an exception handler.</p>
 <p>This function can be used to cause an exception handler to return execution to an address other than the one that caused the exception.</p>
@@ -428,7 +426,7 @@
       &copy;2019, SiFive Inc..
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |

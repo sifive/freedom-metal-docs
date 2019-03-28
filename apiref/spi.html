@@ -6,15 +6,13 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>SPIs &#8212; Freedom Metal v0.1.2-126-g653d2d1 documentation</title>
+    <title>SPIs &#8212; Freedom Metal v201903 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script type="text/javascript" src="../_static/jquery.js"></script>
     <script type="text/javascript" src="../_static/underscore.js"></script>
     <script type="text/javascript" src="../_static/doctools.js"></script>
-    <script type="text/javascript" src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Switches" href="switch.html" />
@@ -41,7 +39,7 @@
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="function">
 <dt id="_CPPv320metal_spi_get_devicei">
-<span id="_CPPv220metal_spi_get_devicei"></span><span id="metal_spi_get_device__i"></span><span class="target" id="spi_8h_1ab4d8d6db4e1291dd58a03bda510db58b"></span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<code class="descname">metal_spi_get_device</code><span class="sig-paren">(</span>int <em>device_num</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_spi_get_devicei" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv220metal_spi_get_devicei"></span><span id="metal_spi_get_device__i"></span><span class="target" id="spi_8h_1a855e33042e8166cb66fc6b9f15c06d18"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<code class="descname">metal_spi_get_device</code><span class="sig-paren">(</span>int <em>device_num</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_spi_get_devicei" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get a handle for a SPI device. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -56,8 +54,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv314metal_spi_initPK9metal_spii">
-<span id="_CPPv214metal_spi_initPK9metal_spii"></span><span id="metal_spi_init__metal_spiCP.i"></span><span class="target" id="spi_8h_1a7745d46f30207a63b85e9989e57c95fa"></span>void <code class="descname">metal_spi_init</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<em>spi</em>, int <em>baud_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314metal_spi_initPK9metal_spii" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv314metal_spi_initP9metal_spii">
+<span id="_CPPv214metal_spi_initP9metal_spii"></span><span id="metal_spi_init__metal_spiP.i"></span><span class="target" id="spi_8h_1a8309f59b3cd7009ec36c94caec10567e"></span>void <code class="descname">metal_spi_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<em>spi</em>, int <em>baud_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv314metal_spi_initP9metal_spii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initialize a SPI device with a certain baud rate. </p>
 <p><dl class="docutils">
 <dt><strong>Parameters</strong></dt>
@@ -71,8 +69,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv318metal_spi_transferPK9metal_spiPK16metal_spi_config6size_tPcPc">
-<span id="_CPPv218metal_spi_transferPK9metal_spiPK16metal_spi_config6size_tPcPc"></span><span id="metal_spi_transfer__metal_spiCP.metal_spi_configCP.s.cP.cP"></span><span class="target" id="spi_8h_1ab9d6a08bd958f18adae6caf88a31dcd5"></span>int <code class="descname">metal_spi_transfer</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<em>spi</em>, <em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv316metal_spi_config" title="metal_spi_config">metal_spi_config</a> *<em>config</em>, size_t <em>len</em>, char *<em>tx_buf</em>, char *<em>rx_buf</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318metal_spi_transferPK9metal_spiPK16metal_spi_config6size_tPcPc" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv318metal_spi_transferP9metal_spiP16metal_spi_config6size_tPcPc">
+<span id="_CPPv218metal_spi_transferP9metal_spiP16metal_spi_config6size_tPcPc"></span><span id="metal_spi_transfer__metal_spiP.metal_spi_configP.s.cP.cP"></span><span class="target" id="spi_8h_1a43416802fba9289bfcff5d42f61bcbd1"></span>int <code class="descname">metal_spi_transfer</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<em>spi</em>, <em class="property">struct</em> <a class="reference internal" href="#_CPPv316metal_spi_config" title="metal_spi_config">metal_spi_config</a> *<em>config</em>, size_t <em>len</em>, char *<em>tx_buf</em>, char *<em>rx_buf</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318metal_spi_transferP9metal_spiP16metal_spi_config6size_tPcPc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Perform a SPI transfer. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -91,8 +89,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv323metal_spi_get_baud_ratePK9metal_spi">
-<span id="_CPPv223metal_spi_get_baud_ratePK9metal_spi"></span><span id="metal_spi_get_baud_rate__metal_spiCP"></span><span class="target" id="spi_8h_1af1e98c0517b84264f385bcf83edca0ab"></span>int <code class="descname">metal_spi_get_baud_rate</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<em>spi</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_spi_get_baud_ratePK9metal_spi" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv323metal_spi_get_baud_rateP9metal_spi">
+<span id="_CPPv223metal_spi_get_baud_rateP9metal_spi"></span><span id="metal_spi_get_baud_rate__metal_spiP"></span><span class="target" id="spi_8h_1a2bce61c3c9ca996d880b24917c6f32d5"></span>int <code class="descname">metal_spi_get_baud_rate</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<em>spi</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_spi_get_baud_rateP9metal_spi" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the current baud rate of the SPI device. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -107,8 +105,8 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv323metal_spi_set_baud_ratePK9metal_spii">
-<span id="_CPPv223metal_spi_set_baud_ratePK9metal_spii"></span><span id="metal_spi_set_baud_rate__metal_spiCP.i"></span><span class="target" id="spi_8h_1af8c35483a9193a77403caeae6d60b8c4"></span>int <code class="descname">metal_spi_set_baud_rate</code><span class="sig-paren">(</span><em class="property">const</em> <em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<em>spi</em>, int <em>baud_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_spi_set_baud_ratePK9metal_spii" title="Permalink to this definition">¶</a><br /></dt>
+<dt id="_CPPv323metal_spi_set_baud_rateP9metal_spii">
+<span id="_CPPv223metal_spi_set_baud_rateP9metal_spii"></span><span id="metal_spi_set_baud_rate__metal_spiP.i"></span><span class="target" id="spi_8h_1af1e744929bc53d0a6ce6ba455d5732b6"></span>int <code class="descname">metal_spi_set_baud_rate</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_spi" title="metal_spi">metal_spi</a> *<em>spi</em>, int <em>baud_rate</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_spi_set_baud_rateP9metal_spii" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set the current baud rate of the SPI device. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -156,8 +154,8 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
-<dt id="_CPPv3N16metal_spi_config8protocolE">
-<span id="_CPPv2N16metal_spi_config8protocolE"></span><span class="target" id="structmetal__spi__config_1a516959be864737cc77da242d8a30cd33"></span><a class="reference internal" href="#_CPPv316metal_spi_config" title="metal_spi_config">metal_spi_config</a>::<strong>[anonymous]</strong> <code class="descname">protocol</code><a class="headerlink" href="#_CPPv3N16metal_spi_config8protocolE" title="Permalink to this definition">¶</a><br /></dt>
+<dt>
+<span class="target" id="structmetal__spi__config_1a516959be864737cc77da242d8a30cd33"></span><code class="descname">metal_spi_config::&#64;0  metal_spi_config::protocol</code></dt>
 <dd><p>The protocol for the SPI transfer. </p>
 </dd></dl>
 
@@ -273,7 +271,7 @@
       &copy;2019, SiFive Inc..
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.3</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |
