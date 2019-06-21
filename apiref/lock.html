@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Buttons &#8212; Freedom Metal v201905 documentation</title>
+    <title>Locks &#8212; Freedom Metal v201905 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Caches" href="cache.html" />
-    <link rel="prev" title="API Reference" href="../api.html" />
+    <link rel="next" title="Memory Enumeration" href="memory.html" />
+    <link rel="prev" title="LEDs" href="led.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,21 +33,32 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="buttons">
-<h1>Buttons<a class="headerlink" href="#buttons" title="Permalink to this headline">¶</a></h1>
-<p>API for interfacing with physical buttons </p>
+  <div class="section" id="locks">
+<h1>Locks<a class="headerlink" href="#locks" title="Permalink to this headline">¶</a></h1>
+<p>An API for creating and using a software lock/mutex. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="macro">
+<dt id="c.METAL_LOCK_DECLARE">
+<span class="target" id="lock_8h_1ab374ff07975df10c0dd028439b351af9"></span><code class="descname">METAL_LOCK_DECLARE</code><span class="sig-paren">(</span>name<span class="sig-paren">)</span><a class="headerlink" href="#c.METAL_LOCK_DECLARE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Declare a lock. </p>
+<p>Locks must be declared with METAL_LOCK_DECLARE to ensure that the lock is linked into a memory region which supports atomic memory operations. </p>
+</dd></dl>
+
+</div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="function">
-<dt id="_CPPv316metal_button_getPc">
-<span id="_CPPv216metal_button_getPc"></span><span id="metal_button_get__cP"></span><span class="target" id="button_8h_1a37c968fa31653486de183be46f9dee19"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv312metal_button" title="metal_button">metal_button</a> *<code class="descname">metal_button_get</code><span class="sig-paren">(</span>char *<em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316metal_button_getPc" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get a reference to a button. </p>
-<p><dl class="docutils">
+<dt id="_CPPv315metal_lock_initP10metal_lock">
+<span id="_CPPv215metal_lock_initP10metal_lock"></span><span id="metal_lock_init__metal_lockP"></span><span class="target" id="lock_8h_1ac6c3769091eb4746302c9c5c9b42050c"></span>int <code class="descname">metal_lock_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_lock" title="metal_lock">metal_lock</a> *<em>lock</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315metal_lock_initP10metal_lock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize a lock. </p>
+<p><p>If the lock cannot be initialized, attempts to take or give the lock will result in a Store/AMO access fault. </p>
+<dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>A handle for the button </dd>
+<dd>0 if the lock is successfully initialized. A non-zero code indicates failure.</dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">label</span></code>: The DeviceTree label for the button </li>
+<li><code class="docutils literal notranslate"><span class="pre">lock</span></code>: The handle for a lock </li>
 </ul>
 </dd>
 </dl>
@@ -55,15 +66,16 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv333metal_button_interrupt_controllerP12metal_button">
-<span id="_CPPv233metal_button_interrupt_controllerP12metal_button"></span><span id="metal_button_interrupt_controller__metal_buttonP"></span><span class="target" id="button_8h_1a83d841df3634add5be7fbe0d68b7fd36"></span><em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_button_interrupt_controller</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv312metal_button" title="metal_button">metal_button</a> *<em>button</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv333metal_button_interrupt_controllerP12metal_button" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the interrupt controller for a button. </p>
-<p><dl class="docutils">
+<dt id="_CPPv315metal_lock_takeP10metal_lock">
+<span id="_CPPv215metal_lock_takeP10metal_lock"></span><span id="metal_lock_take__metal_lockP"></span><span class="target" id="lock_8h_1a62f98dd8920e3e1dcab6e87763a0e413"></span>int <code class="descname">metal_lock_take</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_lock" title="metal_lock">metal_lock</a> *<em>lock</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315metal_lock_takeP10metal_lock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Take a lock. </p>
+<p><p>If the lock initialization failed, attempts to take a lock will result in a Store/AMO access fault. </p>
+<dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>A pointer to the interrupt controller responsible for handling button interrupts. </dd>
+<dd>0 if the lock is successfully taken</dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">button</span></code>: The handle for the button </li>
+<li><code class="docutils literal notranslate"><span class="pre">lock</span></code>: The handle for a lock </li>
 </ul>
 </dd>
 </dl>
@@ -71,15 +83,16 @@
 </dd></dl>
 
 <dl class="function">
-<dt id="_CPPv329metal_button_get_interrupt_idP12metal_button">
-<span id="_CPPv229metal_button_get_interrupt_idP12metal_button"></span><span id="metal_button_get_interrupt_id__metal_buttonP"></span><span class="target" id="button_8h_1a700573b08686ea6099f4b6d99fb0d3b5"></span>int <code class="descname">metal_button_get_interrupt_id</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv312metal_button" title="metal_button">metal_button</a> *<em>button</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329metal_button_get_interrupt_idP12metal_button" title="Permalink to this definition">¶</a><br /></dt>
-<dd><p>Get the interrupt id for a button. </p>
-<p><dl class="docutils">
+<dt id="_CPPv315metal_lock_giveP10metal_lock">
+<span id="_CPPv215metal_lock_giveP10metal_lock"></span><span id="metal_lock_give__metal_lockP"></span><span class="target" id="lock_8h_1a2a107fe4f7faea16bb3f98e572dc480b"></span>int <code class="descname">metal_lock_give</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv310metal_lock" title="metal_lock">metal_lock</a> *<em>lock</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv315metal_lock_giveP10metal_lock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Give back a held lock. </p>
+<p><p>If the lock initialization failed, attempts to give a lock will result in a Store/AMO access fault. </p>
+<dl class="docutils">
 <dt><strong>Return</strong></dt>
-<dd>The interrupt id corresponding to a button. </dd>
+<dd>0 if the lock is successfully given</dd>
 <dt><strong>Parameters</strong></dt>
 <dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">button</span></code>: The handle for the button </li>
+<li><code class="docutils literal notranslate"><span class="pre">lock</span></code>: The handle for a lock </li>
 </ul>
 </dd>
 </dl>
@@ -88,10 +101,9 @@
 
 </div>
 <dl class="class">
-<dt id="_CPPv312metal_button">
-<span id="_CPPv212metal_button"></span><span id="metal_button"></span><span class="target" id="structmetal__button"></span><em class="property">struct </em><code class="descname">metal_button</code><a class="headerlink" href="#_CPPv312metal_button" title="Permalink to this definition">¶</a><br /></dt>
-<dd><em>#include &lt;button.h&gt;</em><p>A button device handle. </p>
-<p>A <code class="docutils literal notranslate"><span class="pre">struct</span> <a class="reference internal" href="#structmetal__button"><span class="std std-ref"><span class="pre">metal_button</span></span></a></code> is an implementation-defined object which represents a button on a development board. </p>
+<dt id="_CPPv310metal_lock">
+<span id="_CPPv210metal_lock"></span><span id="metal_lock"></span><span class="target" id="structmetal__lock"></span><em class="property">struct </em><code class="descname">metal_lock</code><a class="headerlink" href="#_CPPv310metal_lock" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;lock.h&gt;</em><p>A handle for a lock. </p>
 </dd></dl>
 
 </div>
@@ -117,7 +129,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Freedom Metal</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devguide.html">Developer Guide</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Buttons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="button.html">Buttons</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cache.html">Caches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="clock.html">Clocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpu.html">CPU</a></li>
@@ -125,7 +137,7 @@
 <li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="itim.html">ITIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="led.html">LEDs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="lock.html">Locks</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Locks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="memory.html">Memory Enumeration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pmp.html">PMPs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shutdown.html">Shutdown</a></li>
@@ -143,8 +155,8 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="../api.html">API Reference</a><ul>
-      <li>Previous: <a href="../api.html" title="previous chapter">API Reference</a></li>
-      <li>Next: <a href="cache.html" title="next chapter">Caches</a></li>
+      <li>Previous: <a href="led.html" title="previous chapter">LEDs</a></li>
+      <li>Next: <a href="memory.html" title="next chapter">Memory Enumeration</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -173,7 +185,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |
-      <a href="../_sources/apiref/button.rst.txt"
+      <a href="../_sources/apiref/lock.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Standard I/O &#8212; Freedom Metal v201905 documentation</title>
+    <title>FE310-G00 PLL &#8212; Freedom Metal v201905 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="API Reference" href="../api.html" />
-    <link rel="prev" title="Physical Memory Protection" href="pmps.html" />
+    <link rel="next" title="Interrupt Handlers" href="interrupts.html" />
+    <link rel="prev" title="Exception Handlers" href="exceptions.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,31 +33,30 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="standard-i-o">
-<h1>Standard I/O<a class="headerlink" href="#standard-i-o" title="Permalink to this headline">¶</a></h1>
-<p>Freedom Metal integrates with libc <code class="docutils literal notranslate"><span class="pre">STDOUT</span></code> to provide virtual terminal support.
-The default <code class="docutils literal notranslate"><span class="pre">STDOUT</span></code> device is the first UART serial peripheral on the target.
-If no UART serial peripheral is present, such as in the case of SiFive CoreIP
-test harnesses, then the bytes sent to <code class="docutils literal notranslate"><span class="pre">STDOUT</span></code> are dropped.</p>
-<div class="section" id="hello-world">
-<h2>Hello World<a class="headerlink" href="#hello-world" title="Permalink to this headline">¶</a></h2>
-<p>Using the virtual terminal with Freedom Metal is exactly what you might expect:</p>
-<div class="highlight-C notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp"></span>
-
-<span class="kt">int</span> <span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
-   <span class="n">printf</span><span class="p">(</span><span class="s">&quot;Hello, world!&quot;</span><span class="p">);</span>
-
-   <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-<span class="p">}</span>
+  <div class="section" id="fe310-g00-pll">
+<h1>FE310-G00 PLL<a class="headerlink" href="#fe310-g00-pll" title="Permalink to this headline">¶</a></h1>
+<p>On targets with a PLL compatible with the FE310-G000 SoC, the PLL is configured
+at program initialization with a constructor. This PLL sets the clock frequency
+of the RISC-V CPU, and users of Freedom Metal who wish to set a specific clock
+rate can use Freedom Metal to request that the PLL take on a certain output rate.</p>
+<p>In the DeviceTree for your target, there should be a node like the following
+(example taken from the SiFive HiFive1):</p>
+<div class="highlight-DeviceTree notranslate"><div class="highlight"><pre><span></span>hfclk: clock@4 {
+        compatible = &quot;sifive,fe310-g000,pll&quot;;
+        clocks = &lt;&amp;hfxoscout &amp;hfroscout&gt;;
+        clock-names = &quot;pllref&quot;, &quot;pllsel0&quot;;
+        reg = &lt;&amp;prci 0x8 &amp;prci 0xc&gt;;
+        reg-names = &quot;config&quot;, &quot;divider&quot;;
+        clock-frequency = &lt;16000000&gt;;
+};
 </pre></div>
-</td></tr></table></div>
 </div>
+<p>The <code class="docutils literal notranslate"><span class="pre">clock-frequency</span></code> property of the node sets the requested clock rate of
+the FE310-G000 PLL. The PLL driver will attempt to configure the PLL to achieve
+this clock rate.</p>
+<p>Users should note that the FE310-G000 PLL only supports certain input/output
+clock rate ratios, and so the effective output rate of the PLL may differ from
+the requested rate.</p>
 </div>
 
 
@@ -81,11 +80,11 @@ test harnesses, then the bytes sent to <code class="docutils literal notranslate
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Freedom Metal</a></li>
 <li class="toctree-l1 current"><a class="reference internal" href="../devguide.html">Developer Guide</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="exceptions.html">Exception Handlers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="fe310-g000-pll.html">FE310-G00 PLL</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">FE310-G00 PLL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interrupts.html">Interrupt Handlers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="itim.html">Instruction Tightly Integrated Memory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pmps.html">Physical Memory Protection</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Standard I/O</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tty.html">Standard I/O</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../api.html">API Reference</a></li>
@@ -96,8 +95,8 @@ test harnesses, then the bytes sent to <code class="docutils literal notranslate
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="../devguide.html">Developer Guide</a><ul>
-      <li>Previous: <a href="pmps.html" title="previous chapter">Physical Memory Protection</a></li>
-      <li>Next: <a href="../api.html" title="next chapter">API Reference</a></li>
+      <li>Previous: <a href="exceptions.html" title="previous chapter">Exception Handlers</a></li>
+      <li>Next: <a href="interrupts.html" title="next chapter">Interrupt Handlers</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -126,7 +125,7 @@ test harnesses, then the bytes sent to <code class="docutils literal notranslate
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |
-      <a href="../_sources/devguide/tty.rst.txt"
+      <a href="../_sources/devguide/fe310-g000-pll.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 
