@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Caches &#8212; Freedom Metal v201905 documentation</title>
+    <title>Caches &#8212; Freedom Metal v201908 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -40,7 +40,7 @@
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="function">
 <dt id="_CPPv316metal_cache_initP11metal_cachei">
-<span id="_CPPv216metal_cache_initP11metal_cachei"></span><span id="metal_cache_init__metal_cacheP.i"></span><span class="target" id="cache_8h_1a7a302291f2168c036f92cf72f44ba89d"></span>void <code class="descname">metal_cache_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em>, int <em>ways</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316metal_cache_initP11metal_cachei" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv216metal_cache_initP11metal_cachei"></span><span id="metal_cache_init__metal_cacheP.i"></span><span class="target" id="cache_8h_1a095aae506e43f2fdf792f65ff63c1acc"></span>__inline__ void <code class="descname">metal_cache_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em>, int <em>ways</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316metal_cache_initP11metal_cachei" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initialize a cache. </p>
 <p><p>Initializes a cache with the requested number of ways enabled. </p>
 <dl class="docutils">
@@ -56,7 +56,7 @@
 
 <dl class="function">
 <dt id="_CPPv328metal_cache_get_enabled_waysP11metal_cache">
-<span id="_CPPv228metal_cache_get_enabled_waysP11metal_cache"></span><span id="metal_cache_get_enabled_ways__metal_cacheP"></span><span class="target" id="cache_8h_1a4533d6c4cbe55f440d28c28b9adfea80"></span>int <code class="descname">metal_cache_get_enabled_ways</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cache_get_enabled_waysP11metal_cache" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv228metal_cache_get_enabled_waysP11metal_cache"></span><span id="metal_cache_get_enabled_ways__metal_cacheP"></span><span class="target" id="cache_8h_1a927d02f9513bf3ea60bc9acac6f34630"></span>__inline__ int <code class="descname">metal_cache_get_enabled_ways</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cache_get_enabled_waysP11metal_cache" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the current number of enabled cache ways. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -72,7 +72,7 @@
 
 <dl class="function">
 <dt id="_CPPv328metal_cache_set_enabled_waysP11metal_cachei">
-<span id="_CPPv228metal_cache_set_enabled_waysP11metal_cachei"></span><span id="metal_cache_set_enabled_ways__metal_cacheP.i"></span><span class="target" id="cache_8h_1aef6fe740ef5b57b0784e0e19e3219a8e"></span>int <code class="descname">metal_cache_set_enabled_ways</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em>, int <em>ways</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cache_set_enabled_waysP11metal_cachei" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv228metal_cache_set_enabled_waysP11metal_cachei"></span><span id="metal_cache_set_enabled_ways__metal_cacheP.i"></span><span class="target" id="cache_8h_1a492c2f929416fd49c4c619f5ed938273"></span>__inline__ int <code class="descname">metal_cache_set_enabled_ways</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv311metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em>, int <em>ways</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_cache_set_enabled_waysP11metal_cachei" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Enable the requested number of cache ways. </p>
 <p><dl class="docutils">
 <dt><strong>Return</strong></dt>
@@ -81,6 +81,88 @@
 <dd><ul class="breatheparameterlist first last simple">
 <li><code class="docutils literal notranslate"><span class="pre">cache</span></code>: The handle for the cache </li>
 <li><code class="docutils literal notranslate"><span class="pre">ways</span></code>: The number of ways to enabled </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325metal_dcache_l1_availablei">
+<span id="_CPPv225metal_dcache_l1_availablei"></span><span id="metal_dcache_l1_available__i"></span><span class="target" id="cache_8h_1a6c626c99fdc287e699a6ca931d957a04"></span>int <code class="descname">metal_dcache_l1_available</code><span class="sig-paren">(</span>int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325metal_dcache_l1_availablei" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if dcache is supported on the core. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 if dcache is present </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hartid</span></code>: The core to check </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321metal_dcache_l1_flushi9uintptr_t">
+<span id="_CPPv221metal_dcache_l1_flushi9uintptr_t"></span><span id="metal_dcache_l1_flush__i.uintptr_t"></span><span class="target" id="cache_8h_1a132c5dca47a4cc26a713e25128444531"></span>void <code class="descname">metal_dcache_l1_flush</code><span class="sig-paren">(</span>int <em>hartid</em>, uintptr_t <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321metal_dcache_l1_flushi9uintptr_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Flush dcache for L1 on the requested core with write back. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>None </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hartid</span></code>: The core to flush </li>
+<li><code class="docutils literal notranslate"><span class="pre">address</span></code>: The virtual address of cacheline to invalidate </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv323metal_dcache_l1_discardi9uintptr_t">
+<span id="_CPPv223metal_dcache_l1_discardi9uintptr_t"></span><span id="metal_dcache_l1_discard__i.uintptr_t"></span><span class="target" id="cache_8h_1a25bac8a48f340101db5697644710e535"></span>void <code class="descname">metal_dcache_l1_discard</code><span class="sig-paren">(</span>int <em>hartid</em>, uintptr_t <em>address</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_dcache_l1_discardi9uintptr_t" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Discard dcache for L1 on the requested core with no write back. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>None </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hartid</span></code>: The core to discard </li>
+<li><code class="docutils literal notranslate"><span class="pre">address</span></code>: The virtual address of cacheline to invalidate </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv325metal_icache_l1_availablei">
+<span id="_CPPv225metal_icache_l1_availablei"></span><span id="metal_icache_l1_available__i"></span><span class="target" id="cache_8h_1af31b359d155181bdbc5ccc2f4dac13a3"></span>int <code class="descname">metal_icache_l1_available</code><span class="sig-paren">(</span>int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325metal_icache_l1_availablei" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Check if icache is supported on the core. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>1 if icache is present </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hartid</span></code>: The core to check </li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321metal_icache_l1_flushi">
+<span id="_CPPv221metal_icache_l1_flushi"></span><span id="metal_icache_l1_flush__i"></span><span class="target" id="cache_8h_1aa44416c65abc79906dc7b346fab96cb1"></span>void <code class="descname">metal_icache_l1_flush</code><span class="sig-paren">(</span>int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321metal_icache_l1_flushi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Flush icache for L1 on the requested core. </p>
+<p><dl class="docutils">
+<dt><strong>Return</strong></dt>
+<dd>None </dd>
+<dt><strong>Parameters</strong></dt>
+<dd><ul class="breatheparameterlist first last simple">
+<li><code class="docutils literal notranslate"><span class="pre">hartid</span></code>: The core to flush </li>
 </ul>
 </dd>
 </dl>
@@ -128,12 +210,15 @@
 <li class="toctree-l2"><a class="reference internal" href="lock.html">Locks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="memory.html">Memory Enumeration</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pmp.html">PMPs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html">Real-Time Clock</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shutdown.html">Shutdown</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spi.html">SPIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="switch.html">Switches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html">Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="timer.html">Timer API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tty.html">TTY</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uart.html">UARTs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="watchdog.html">Watchdog</a></li>
 </ul>
 </li>
 </ul>

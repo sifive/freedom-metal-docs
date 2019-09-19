@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Interrupt Handlers &#8212; Freedom Metal v201905 documentation</title>
+    <title>Interrupt Handlers &#8212; Freedom Metal v201908 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -66,7 +66,7 @@ cpu_int -&gt; soft_int [label=&quot;ID = software_id&quot;];
 <h2>The CPU Interrupt Controller<a class="headerlink" href="#the-cpu-interrupt-controller" title="Permalink to this headline">¶</a></h2>
 <p>The CPU interrupt controller is the top of the interrupt heirarchy. It must be
 initialized before any other interrupt controllers are initialized. In example:</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">metal_cpu</span> <span class="o">*</span><span class="n">cpu0</span> <span class="o">=</span> <span class="n">metal_get_cpu</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">metal_cpu</span> <span class="o">*</span><span class="n">cpu0</span> <span class="o">=</span> <span class="n">metal_cpu_get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">cpu</span><span class="p">)</span> <span class="p">{</span>
    <span class="cm">/* Unable to get CPU handle */</span>
 <span class="p">}</span>

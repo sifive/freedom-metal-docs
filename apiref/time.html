@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>ITIM &#8212; Freedom Metal v201908 documentation</title>
+    <title>Time &#8212; Freedom Metal v201908 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,8 +15,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="LEDs" href="led.html" />
-    <link rel="prev" title="Interrupts" href="interrupt.html" />
+    <link rel="next" title="Timer API" href="timer.html" />
+    <link rel="prev" title="Switches" href="switch.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -33,17 +33,20 @@
 
           <div class="body" role="main">
             
-  <div class="section" id="itim">
-<h1>ITIM<a class="headerlink" href="#itim" title="Permalink to this headline">¶</a></h1>
-<p>API for manipulating ITIM allocation </p>
+  <div class="section" id="time">
+<h1>Time<a class="headerlink" href="#time" title="Permalink to this headline">¶</a></h1>
+<p>API for dealing with time. </p>
 <div class="breathe-sectiondef docutils container">
-<p class="breathe-sectiondef-title rubric">Defines</p>
-<dl class="macro">
-<dt>
-<code class="descname">METAL_PLACE_IN_ITIM</code></dt>
-<dd><p>Link a function into the ITIM. </p>
-<p>Link a function into the ITIM (Instruction Tightly Integrated Memory) if the ITIM is present on the target device. </p>
-</dd></dl>
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="function">
+<dt id="_CPPv318metal_gettimeofdayP7timevalPv">
+<span id="_CPPv218metal_gettimeofdayP7timevalPv"></span><span id="metal_gettimeofday__timevalP.voidP"></span><span class="target" id="time_8h_1ad25deebc2a48b73f88a272ac1c77e8c9"></span>int <code class="descname">metal_gettimeofday</code><span class="sig-paren">(</span><em class="property">struct</em> timeval *<em>tp</em>, void *<em>tzp</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv318metal_gettimeofdayP7timevalPv" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="function">
+<dt id="_CPPv310metal_timev">
+<span id="_CPPv210metal_timev"></span><span id="metal_time__void"></span><span class="target" id="time_8h_1af8562b5bb4619e62abc4ddd0935beafa"></span>time_t <code class="descname">metal_time</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv310metal_timev" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
 
 </div>
 </div>
@@ -75,7 +78,7 @@
 <li class="toctree-l2"><a class="reference internal" href="cpu.html">CPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupts</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ITIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="itim.html">ITIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="led.html">LEDs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="lock.html">Locks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="memory.html">Memory Enumeration</a></li>
@@ -84,7 +87,7 @@
 <li class="toctree-l2"><a class="reference internal" href="shutdown.html">Shutdown</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spi.html">SPIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="switch.html">Switches</a></li>
-<li class="toctree-l2"><a class="reference internal" href="time.html">Time</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="timer.html">Timer API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tty.html">TTY</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uart.html">UARTs</a></li>
@@ -98,8 +101,8 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="../api.html">API Reference</a><ul>
-      <li>Previous: <a href="interrupt.html" title="previous chapter">Interrupts</a></li>
-      <li>Next: <a href="led.html" title="next chapter">LEDs</a></li>
+      <li>Previous: <a href="switch.html" title="previous chapter">Switches</a></li>
+      <li>Next: <a href="timer.html" title="next chapter">Timer API</a></li>
   </ul></li>
   </ul></li>
 </ul>
@@ -128,7 +131,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
       
       |
-      <a href="../_sources/apiref/itim.rst.txt"
+      <a href="../_sources/apiref/time.rst.txt"
           rel="nofollow">Page source</a>
     </div>
 

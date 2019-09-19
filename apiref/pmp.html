@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>PMPs &#8212; Freedom Metal v201905 documentation</title>
+    <title>PMPs &#8212; Freedom Metal v201908 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -15,7 +15,7 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Shutdown" href="shutdown.html" />
+    <link rel="next" title="Real-Time Clock" href="rtc.html" />
     <link rel="prev" title="Memory Enumeration" href="memory.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
@@ -78,6 +78,12 @@
 <dt id="_CPPv320metal_pmp_get_devicev">
 <span id="_CPPv220metal_pmp_get_devicev"></span><span id="metal_pmp_get_device__void"></span><span class="target" id="pmp_8h_1a285362cb084160ce14af26d75f9116f5"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv39metal_pmp" title="metal_pmp">metal_pmp</a> *<code class="descname">metal_pmp_get_device</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_pmp_get_devicev" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the PMP device handle. </p>
+</dd></dl>
+
+<dl class="function">
+<dt id="_CPPv321metal_pmp_num_regionsi">
+<span id="_CPPv221metal_pmp_num_regionsi"></span><span id="metal_pmp_num_regions__i"></span><span class="target" id="pmp_8h_1ab70820f1ec296b1fd8100854e07c43ff"></span>int <code class="descname">metal_pmp_num_regions</code><span class="sig-paren">(</span>int <em>hartid</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321metal_pmp_num_regionsi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the number of pmp regions for the hartid. </p>
 </dd></dl>
 
 <dl class="function">
@@ -355,19 +361,19 @@
 <p class="breathe-sectiondef-title rubric">Public Members</p>
 <dl class="member">
 <dt id="_CPPv3N16metal_pmp_config1RE">
-<span id="_CPPv2N16metal_pmp_config1RE"></span><span id="metal_pmp_config::R__i"></span><span class="target" id="structmetal__pmp__config_1ae7a18f7b2449ed6502e7b2ac6418d0b9"></span>int <code class="descname">R</code><a class="headerlink" href="#_CPPv3N16metal_pmp_config1RE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N16metal_pmp_config1RE"></span><span id="metal_pmp_config::R__unsigned-i"></span><span class="target" id="structmetal__pmp__config_1abbb1fbb1ce214485d053373260b76b92"></span>unsigned int <code class="descname">R</code><a class="headerlink" href="#_CPPv3N16metal_pmp_config1RE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets whether reads to the PMP region succeed. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N16metal_pmp_config1WE">
-<span id="_CPPv2N16metal_pmp_config1WE"></span><span id="metal_pmp_config::W__i"></span><span class="target" id="structmetal__pmp__config_1ad625b6d3fccc337da37e79bb61b6505b"></span>int <code class="descname">W</code><a class="headerlink" href="#_CPPv3N16metal_pmp_config1WE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N16metal_pmp_config1WE"></span><span id="metal_pmp_config::W__unsigned-i"></span><span class="target" id="structmetal__pmp__config_1a043edec57c56ba41feca44d348db4098"></span>unsigned int <code class="descname">W</code><a class="headerlink" href="#_CPPv3N16metal_pmp_config1WE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets whether writes to the PMP region succeed. </p>
 </dd></dl>
 
 <dl class="member">
 <dt id="_CPPv3N16metal_pmp_config1XE">
-<span id="_CPPv2N16metal_pmp_config1XE"></span><span id="metal_pmp_config::X__i"></span><span class="target" id="structmetal__pmp__config_1adff0ca4e2efb45e8734ab747bb6e44b3"></span>int <code class="descname">X</code><a class="headerlink" href="#_CPPv3N16metal_pmp_config1XE" title="Permalink to this definition">¶</a><br /></dt>
+<span id="_CPPv2N16metal_pmp_config1XE"></span><span id="metal_pmp_config::X__unsigned-i"></span><span class="target" id="structmetal__pmp__config_1a1f16ed35c8a0948dd7e4fb9615aa5799"></span>unsigned int <code class="descname">X</code><a class="headerlink" href="#_CPPv3N16metal_pmp_config1XE" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Sets whether the PMP region is executable. </p>
 </dd></dl>
 
@@ -425,12 +431,15 @@
 <li class="toctree-l2"><a class="reference internal" href="lock.html">Locks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="memory.html">Memory Enumeration</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">PMPs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html">Real-Time Clock</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shutdown.html">Shutdown</a></li>
 <li class="toctree-l2"><a class="reference internal" href="spi.html">SPIs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="switch.html">Switches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html">Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="timer.html">Timer API</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tty.html">TTY</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uart.html">UARTs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="watchdog.html">Watchdog</a></li>
 </ul>
 </li>
 </ul>
@@ -441,7 +450,7 @@
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="../api.html">API Reference</a><ul>
       <li>Previous: <a href="memory.html" title="previous chapter">Memory Enumeration</a></li>
-      <li>Next: <a href="shutdown.html" title="next chapter">Shutdown</a></li>
+      <li>Next: <a href="rtc.html" title="next chapter">Real-Time Clock</a></li>
   </ul></li>
   </ul></li>
 </ul>

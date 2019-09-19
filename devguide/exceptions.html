@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Exception Handlers &#8212; Freedom Metal v201905 documentation</title>
+    <title>Exception Handlers &#8212; Freedom Metal v201908 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
@@ -46,7 +46,7 @@ framework has not yet performed the initialization necessary to register
 exception handlers. If this initialization is not performed before an exception
 occurs, any exception will cause the CPU to spin in a tight loop until reset.</p>
 <p>To initialize the Freedom Metal exception handlers, initialize CPU interrupts:</p>
-<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">metal_cpu</span> <span class="o">*</span><span class="n">cpu0</span> <span class="o">=</span> <span class="n">metal_get_cpu</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="k">struct</span> <span class="n">metal_cpu</span> <span class="o">*</span><span class="n">cpu0</span> <span class="o">=</span> <span class="n">metal_cpu_get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="k">if</span><span class="p">(</span><span class="o">!</span><span class="n">cpu</span><span class="p">)</span> <span class="p">{</span>
    <span class="cm">/* There was an error acquiring the CPU hart 0 handle */</span>
 <span class="p">}</span>
@@ -84,7 +84,7 @@ and <a class="reference internal" href="../apiref/interrupt.html"><span class="d
 code.</p>
 <div class="highlight-C notranslate"><div class="highlight"><pre><span></span><span class="cm">/* CPU Hart 0&#39;s interrupt controller must be initialized</span>
 <span class="cm"> * if it is not already */</span>
-<span class="k">struct</span> <span class="n">metal_cpu</span> <span class="o">*</span><span class="n">cpu0</span> <span class="o">=</span> <span class="n">metal_get_cpu</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="k">struct</span> <span class="n">metal_cpu</span> <span class="o">*</span><span class="n">cpu0</span> <span class="o">=</span> <span class="n">metal_cpu_get</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 
 <span class="kt">int</span> <span class="n">rc</span> <span class="o">=</span> <span class="n">metal_cpu_exception_register</span><span class="p">(</span><span class="n">cpu0</span><span class="p">,</span>
             <span class="o">&lt;</span><span class="n">my_ecode</span><span class="o">&gt;</span><span class="p">,</span> <span class="cm">/* Set to your desired value */</span>
