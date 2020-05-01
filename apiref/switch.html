@@ -1,18 +1,18 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Switches &#8212; Freedom Metal v201908 documentation</title>
+    <meta charset="utf-8" />
+    <title>Switches &#8212; Freedom Metal v20.05.RC.02 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Time" href="time.html" />
@@ -38,48 +38,45 @@
 <p>API for reading toggle switches. </p>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Functions</p>
-<dl class="function">
-<dt id="_CPPv316metal_switch_getPc">
-<span id="_CPPv216metal_switch_getPc"></span><span id="metal_switch_get__cP"></span><span class="target" id="switch_8h_1a7693902f215f3fc2cf032ebe25fe1d83"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv312metal_switch" title="metal_switch">metal_switch</a> *<code class="descname">metal_switch_get</code><span class="sig-paren">(</span>char *<em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv316metal_switch_getPc" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv416metal_switch_getPc">
+<span id="_CPPv316metal_switch_getPc"></span><span id="_CPPv216metal_switch_getPc"></span><span id="metal_switch_get__cP"></span><span class="target" id="switch_8h_1a7693902f215f3fc2cf032ebe25fe1d83"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv412metal_switch" title="metal_switch">metal_switch</a> *<code class="sig-name descname">metal_switch_get</code><span class="sig-paren">(</span>char *<em>label</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416metal_switch_getPc" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get a handle for a switch. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>A handle to the switch, or NULL if none is found for the requested label </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">label</span></code>: The DeviceTree label for the desired switch </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A handle to the switch, or NULL if none is found for the requested label </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">label</span></code>: The DeviceTree label for the desired switch </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv333metal_switch_interrupt_controllerP12metal_switch">
-<span id="_CPPv233metal_switch_interrupt_controllerP12metal_switch"></span><span id="metal_switch_interrupt_controller__metal_switchP"></span><span class="target" id="switch_8h_1a166c7cd1c6599ad05efd65d2be56d6a4"></span>__inline__ <em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_switch_interrupt_controller</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv312metal_switch" title="metal_switch">metal_switch</a> *<em>sw</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv333metal_switch_interrupt_controllerP12metal_switch" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv433metal_switch_interrupt_controllerP12metal_switch">
+<span id="_CPPv333metal_switch_interrupt_controllerP12metal_switch"></span><span id="_CPPv233metal_switch_interrupt_controllerP12metal_switch"></span><span id="metal_switch_interrupt_controller__metal_switchP"></span><span class="target" id="switch_8h_1a166c7cd1c6599ad05efd65d2be56d6a4"></span>__inline__ <em class="property">struct</em> <a class="reference internal" href="interrupt.html#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="sig-name descname">metal_switch_interrupt_controller</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv412metal_switch" title="metal_switch">metal_switch</a> *<em>sw</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv433metal_switch_interrupt_controllerP12metal_switch" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the interrupt controller for a switch. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The interrupt controller handle </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">sw</span></code>: The handle for the switch </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The interrupt controller handle </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sw</span></code>: The handle for the switch </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv329metal_switch_get_interrupt_idP12metal_switch">
-<span id="_CPPv229metal_switch_get_interrupt_idP12metal_switch"></span><span id="metal_switch_get_interrupt_id__metal_switchP"></span><span class="target" id="switch_8h_1a42bf39b368217b50ed3d0cb875d6bf47"></span>__inline__ int <code class="descname">metal_switch_get_interrupt_id</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv312metal_switch" title="metal_switch">metal_switch</a> *<em>sw</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329metal_switch_get_interrupt_idP12metal_switch" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv429metal_switch_get_interrupt_idP12metal_switch">
+<span id="_CPPv329metal_switch_get_interrupt_idP12metal_switch"></span><span id="_CPPv229metal_switch_get_interrupt_idP12metal_switch"></span><span id="metal_switch_get_interrupt_id__metal_switchP"></span><span class="target" id="switch_8h_1a42bf39b368217b50ed3d0cb875d6bf47"></span>__inline__ int <code class="sig-name descname">metal_switch_get_interrupt_id</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv412metal_switch" title="metal_switch">metal_switch</a> *<em>sw</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429metal_switch_get_interrupt_idP12metal_switch" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the interrupt id for a switch. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The interrupt ID for the switch </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">sw</span></code>: The handle for the switch </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The interrupt ID for the switch </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sw</span></code>: The handle for the switch </p></li>
 </ul>
 </dd>
 </dl>
@@ -87,9 +84,9 @@
 </dd></dl>
 
 </div>
-<dl class="class">
-<dt id="_CPPv312metal_switch">
-<span id="_CPPv212metal_switch"></span><span id="metal_switch"></span><span class="target" id="structmetal__switch"></span><em class="property">struct </em><code class="descname">metal_switch</code><a class="headerlink" href="#_CPPv312metal_switch" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp struct">
+<dt id="_CPPv412metal_switch">
+<span id="_CPPv312metal_switch"></span><span id="_CPPv212metal_switch"></span><span id="metal_switch"></span><span class="target" id="structmetal__switch"></span><em class="property">struct </em><code class="sig-name descname">metal_switch</code><a class="headerlink" href="#_CPPv412metal_switch" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em>#include &lt;switch.h&gt;</em><p>A handle for a switch. </p>
 </dd></dl>
 
@@ -121,6 +118,7 @@
 <li class="toctree-l2"><a class="reference internal" href="clock.html">Clocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpu.html">CPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="init.html">Constructors and Destructors</a></li>
 <li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="itim.html">ITIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="led.html">LEDs</a></li>
@@ -152,17 +150,15 @@
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -171,8 +167,8 @@
       &copy;2019, SiFive Inc..
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="../_sources/apiref/switch.rst.txt"

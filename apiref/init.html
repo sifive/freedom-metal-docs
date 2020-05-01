@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Constructors and Destructors &#8212; Freedom Metal v20.05.RC.02 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Interrupts" href="interrupt.html" />
+    <link rel="prev" title="GPIO" href="gpio.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="constructors-and-destructors">
+<h1>Constructors and Destructors<a class="headerlink" href="#constructors-and-destructors" title="Permalink to this headline">¶</a></h1>
+<p>API for Metal constructors and destructors </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt>
+<code class="sig-name descname">METAL_INIT_HIGHEST_PRIORITY</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt>
+<code class="sig-name descname">METAL_INIT_DEFAULT_PRIORITY</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt>
+<code class="sig-name descname">METAL_INIT_LOWEST_PRIORITY</code><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt>
+<code class="sig-name descname">METAL_CONSTRUCTOR</code><span class="sig-paren">(</span><em>function_name</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Define a Metal constructor. </p>
+<p>Functions defined with METAL_CONSTRUCTOR will be added to the list of Metal constructors. By default, these functions are called before main by the <a class="reference internal" href="../devguide/init.html#init_8h_1a1341e9ef0687d42bc98ea831b71c41e7"><span class="std std-ref">metal_init()</span></a> function. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt>
+<code class="sig-name descname">METAL_CONSTRUCTOR_PRIO</code><span class="sig-paren">(</span><em>function_name</em>, <em>priority</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Define a Metal constructor with a given priority. </p>
+<p>The priority argument should be an integer between 0 and 9999, where 0 is the highest priority (runs first) and 9999 is the lowest priority (runs last).</p>
+<p>Functions defined with METAL_CONSTRUCTOR_PRIO will be added to the list of Metal constructors. By default, these functions are called before main by the <a class="reference internal" href="../devguide/init.html#init_8h_1a1341e9ef0687d42bc98ea831b71c41e7"><span class="std std-ref">metal_init()</span></a> function. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt>
+<code class="sig-name descname">METAL_DESTRUCTOR</code><span class="sig-paren">(</span><em>function_name</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Define a Metal destructor. </p>
+<p>Functions defined with METAL_DESTRUCTOR will be added to the list of Metal destructors. By default, these functions are called on exit by the <a class="reference internal" href="../devguide/init.html#init_8h_1afb661c7e95f4b26de5385e77687cd883"><span class="std std-ref">metal_fini()</span></a> function. </p>
+</dd></dl>
+
+<dl class="cpp macro">
+<dt>
+<code class="sig-name descname">METAL_DESTRUCTOR_PRIO</code><span class="sig-paren">(</span><em>function_name</em>, <em>priority</em><span class="sig-paren">)</span><br /></dt>
+<dd><p>Define a Metal destructor with a given priority. </p>
+<p>The priority argument should be an integer between 0 and 9999, where 0 is the highest priority (runs first) and 9999 is the lowest priority (runs last).</p>
+<p>Functions defined with METAL_DESTRUCTOR_PRIO will be added to the list of Metal destructors. By default, these functions are called on exit by the <a class="reference internal" href="../devguide/init.html#init_8h_1afb661c7e95f4b26de5385e77687cd883"><span class="std std-ref">metal_fini()</span></a> function. </p>
+</dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Typedefs</p>
+<dl class="cpp type">
+<dt>
+<em class="property">typedef </em>void (*<code class="sig-name descname">metal_constructor_t</code>)<span class="sig-paren">(</span>void<span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp type">
+<dt>
+<em class="property">typedef </em>void (*<code class="sig-name descname">metal_destructor_t</code>)<span class="sig-paren">(</span>void<span class="sig-paren">)</span><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Functions</p>
+<dl class="cpp function">
+<dt>
+void <code class="sig-name descname">metal_init</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><br /></dt>
+<dd><p>Call all Metal constructors. </p>
+<p>Devices supported by Metal may define Metal constructors to perform initialization before main. This function iterates over the constructors and calls them in turn.</p>
+<p>You can add your own constructors to the functions called by <a class="reference internal" href="../devguide/init.html#init_8h_1a1341e9ef0687d42bc98ea831b71c41e7"><span class="std std-ref">metal_init()</span></a> by defining functions with the <a class="reference internal" href="../devguide/init.html#init_8h_1a2c541ec6a50602adab8004f1f5a87f36"><span class="std std-ref">METAL_CONSTRUCTOR()</span></a> macro.</p>
+<p>This function is called before main by default by <a class="reference internal" href="../devguide/init.html#init_8h_1ae554cdb107aec356b449c126186f4d73"><span class="std std-ref">metal_init_run()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt>
+void <code class="sig-name descname">metal_fini</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><br /></dt>
+<dd><p>Call all Metal destructors. </p>
+<p>Devices supported by Metal may define Metal destructors to perform initialization on exit. This function iterates over the destructors and calls them in turn.</p>
+<p>You can add your own destructors to the functions called by <a class="reference internal" href="../devguide/init.html#init_8h_1afb661c7e95f4b26de5385e77687cd883"><span class="std std-ref">metal_fini()</span></a> by defining functions with the <a class="reference internal" href="../devguide/init.html#init_8h_1aaa1e94a031ffa868ced8bc0b8ad10f81"><span class="std std-ref">METAL_DESTRUCTOR()</span></a> macro.</p>
+<p>This function is called on exit by default by <a class="reference internal" href="../devguide/init.html#init_8h_1a41385e266da40cf6fa78b4b87f05d7ea"><span class="std std-ref">metal_fini_run()</span></a>. </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt>
+void <code class="sig-name descname">metal_init_run</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><br /></dt>
+<dd><p>Weak function to call <a class="reference internal" href="../devguide/init.html#init_8h_1a1341e9ef0687d42bc98ea831b71c41e7"><span class="std std-ref">metal_init()</span></a> before main. </p>
+<p>This function calls <a class="reference internal" href="../devguide/init.html#init_8h_1a1341e9ef0687d42bc98ea831b71c41e7"><span class="std std-ref">metal_init()</span></a> before main by default. If you wish to replace or augment this call to the Metal constructors, you can redefine <a class="reference internal" href="../devguide/init.html#init_8h_1ae554cdb107aec356b449c126186f4d73"><span class="std std-ref">metal_init_run()</span></a> </p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt>
+void <code class="sig-name descname">metal_fini_run</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><br /></dt>
+<dd><p>Weak function to call <a class="reference internal" href="../devguide/init.html#init_8h_1afb661c7e95f4b26de5385e77687cd883"><span class="std std-ref">metal_fini()</span></a> before main. </p>
+<p>This function calls <a class="reference internal" href="../devguide/init.html#init_8h_1afb661c7e95f4b26de5385e77687cd883"><span class="std std-ref">metal_fini()</span></a> at exit by default. If you wish to replace or augment this call to the Metal destructors, you can redefine <a class="reference internal" href="../devguide/init.html#init_8h_1a41385e266da40cf6fa78b4b87f05d7ea"><span class="std std-ref">metal_fini_run()</span></a> </p>
+</dd></dl>
+
+</div>
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Freedom Metal</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction to Freedom Metal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../devguide.html">Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../api.html">API Reference</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="button.html">Buttons</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cache.html">Caches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="clock.html">Clocks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="cpu.html">CPU</a></li>
+<li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Constructors and Destructors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="interrupt.html">Interrupts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="itim.html">ITIM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="led.html">LEDs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lock.html">Locks</a></li>
+<li class="toctree-l2"><a class="reference internal" href="memory.html">Memory Enumeration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pmp.html">PMPs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rtc.html">Real-Time Clock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="shutdown.html">Shutdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="spi.html">SPIs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="switch.html">Switches</a></li>
+<li class="toctree-l2"><a class="reference internal" href="time.html">Time</a></li>
+<li class="toctree-l2"><a class="reference internal" href="timer.html">Timer API</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tty.html">TTY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="uart.html">UARTs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="watchdog.html">Watchdog</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../api.html">API Reference</a><ul>
+      <li>Previous: <a href="gpio.html" title="previous chapter">GPIO</a></li>
+      <li>Next: <a href="interrupt.html" title="next chapter">Interrupts</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, SiFive Inc..
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/apiref/init.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

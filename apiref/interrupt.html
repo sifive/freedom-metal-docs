@@ -1,22 +1,22 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Interrupts &#8212; Freedom Metal v201908 documentation</title>
+    <meta charset="utf-8" />
+    <title>Interrupts &#8212; Freedom Metal v20.05.RC.02 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
-    <script type="text/javascript" src="../_static/jquery.js"></script>
-    <script type="text/javascript" src="../_static/underscore.js"></script>
-    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="ITIM" href="itim.html" />
-    <link rel="prev" title="GPIO" href="gpio.html" />
+    <link rel="prev" title="Constructors and Destructors" href="init.html" />
    
   <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
   
@@ -37,116 +37,140 @@
 <h1>Interrupts<a class="headerlink" href="#interrupts" title="Permalink to this headline">¶</a></h1>
 <p>API for registering and manipulating interrupts. </p>
 <div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Defines</p>
+<dl class="cpp macro">
+<dt id="c.for_each_metal_affinity">
+<span class="target" id="interrupt_8h_1a2b896cb42157e9c48c6d7f2e2cf3405a"></span><code class="sig-name descname">for_each_metal_affinity</code><span class="sig-paren">(</span><em>bit</em>, <em>metal_affinity</em><span class="sig-paren">)</span><a class="headerlink" href="#c.for_each_metal_affinity" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.metal_affinity_set_val">
+<span class="target" id="interrupt_8h_1a2ff2b33a875676f0ff850782edf77219"></span><code class="sig-name descname">metal_affinity_set_val</code><span class="sig-paren">(</span><em>metal_affinity</em>, <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#c.metal_affinity_set_val" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+<dl class="cpp macro">
+<dt id="c.metal_affinity_set_bit">
+<span class="target" id="interrupt_8h_1a74a4d7f5f99f6995af107be92d101dcf"></span><code class="sig-name descname">metal_affinity_set_bit</code><span class="sig-paren">(</span><em>metal_affinity</em>, <em>bit</em>, <em>val</em><span class="sig-paren">)</span><a class="headerlink" href="#c.metal_affinity_set_bit" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+<div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Typedefs</p>
-<dl class="type">
-<dt id="_CPPv321metal_intr_cntrl_type">
-<span id="_CPPv221metal_intr_cntrl_type"></span><span id="metal_intr_cntrl_type"></span><span class="target" id="interrupt_8h_1af11c8c08c3f77a91a3be6d4390df3921"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv327metal_interrupt_controller_" title="metal_interrupt_controller_">metal_interrupt_controller_</a> <code class="descname">metal_intr_cntrl_type</code><a class="headerlink" href="#_CPPv321metal_intr_cntrl_type" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp type">
+<dt id="_CPPv421metal_intr_cntrl_type">
+<span id="_CPPv321metal_intr_cntrl_type"></span><span id="_CPPv221metal_intr_cntrl_type"></span><span id="metal_intr_cntrl_type"></span><span class="target" id="interrupt_8h_1af11c8c08c3f77a91a3be6d4390df3921"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv427metal_interrupt_controller_" title="metal_interrupt_controller_">metal_interrupt_controller_</a> <code class="sig-name descname">metal_intr_cntrl_type</code><a class="headerlink" href="#_CPPv421metal_intr_cntrl_type" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Possible interrupt controllers. </p>
 </dd></dl>
 
-<dl class="type">
-<dt id="_CPPv317metal_vector_mode">
-<span id="_CPPv217metal_vector_mode"></span><span id="metal_vector_mode"></span><span class="target" id="interrupt_8h_1a12da577bb3179597221662c5589561b3"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv318metal_vector_mode_" title="metal_vector_mode_">metal_vector_mode_</a> <code class="descname">metal_vector_mode</code><a class="headerlink" href="#_CPPv317metal_vector_mode" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp type">
+<dt id="_CPPv417metal_vector_mode">
+<span id="_CPPv317metal_vector_mode"></span><span id="_CPPv217metal_vector_mode"></span><span id="metal_vector_mode"></span><span class="target" id="interrupt_8h_1a12da577bb3179597221662c5589561b3"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv418metal_vector_mode_" title="metal_vector_mode_">metal_vector_mode_</a> <code class="sig-name descname">metal_vector_mode</code><a class="headerlink" href="#_CPPv417metal_vector_mode" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Possible mode of interrupts to operate. </p>
 </dd></dl>
 
-<dl class="type">
-<dt id="_CPPv320metal_intr_priv_mode">
-<span id="_CPPv220metal_intr_priv_mode"></span><span id="metal_intr_priv_mode"></span><span class="target" id="interrupt_8h_1a19e372d277274c3b8fc8edda43ac25b9"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv321metal_intr_priv_mode_" title="metal_intr_priv_mode_">metal_intr_priv_mode_</a> <code class="descname">metal_intr_priv_mode</code><a class="headerlink" href="#_CPPv320metal_intr_priv_mode" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp type">
+<dt id="_CPPv420metal_intr_priv_mode">
+<span id="_CPPv320metal_intr_priv_mode"></span><span id="_CPPv220metal_intr_priv_mode"></span><span id="metal_intr_priv_mode"></span><span class="target" id="interrupt_8h_1a19e372d277274c3b8fc8edda43ac25b9"></span><em class="property">typedef </em><em class="property">enum</em> <a class="reference internal" href="#_CPPv421metal_intr_priv_mode_" title="metal_intr_priv_mode_">metal_intr_priv_mode_</a> <code class="sig-name descname">metal_intr_priv_mode</code><a class="headerlink" href="#_CPPv420metal_intr_priv_mode" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Possible mode of privilege interrupts to operate. </p>
 </dd></dl>
 
-<dl class="type">
-<dt id="_CPPv325metal_interrupt_handler_t">
-<span id="_CPPv225metal_interrupt_handler_t"></span><span id="metal_interrupt_handler_t"></span><span class="target" id="interrupt_8h_1acf581f8608907e67e50300eef23a130b"></span><em class="property">typedef </em>void (*<code class="descname">metal_interrupt_handler_t</code>)<span class="sig-paren">(</span>int, void *<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv325metal_interrupt_handler_t" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp type">
+<dt id="_CPPv414metal_affinity">
+<span id="_CPPv314metal_affinity"></span><span id="_CPPv214metal_affinity"></span><span id="metal_affinity"></span><span class="target" id="interrupt_8h_1a8d556680ebf87dacde399ef2eb62d881"></span><em class="property">typedef </em><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_affinity_" title="metal_affinity_">metal_affinity_</a> <code class="sig-name descname">metal_affinity</code><a class="headerlink" href="#_CPPv414metal_affinity" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>The bitmask of hart context. </p>
+</dd></dl>
+
+<dl class="cpp type">
+<dt id="_CPPv425metal_interrupt_handler_t">
+<span id="_CPPv325metal_interrupt_handler_t"></span><span id="_CPPv225metal_interrupt_handler_t"></span><span id="metal_interrupt_handler_t"></span><span class="target" id="interrupt_8h_1acf581f8608907e67e50300eef23a130b"></span><em class="property">typedef </em>void (*<code class="sig-name descname">metal_interrupt_handler_t</code>)<span class="sig-paren">(</span>int, void*<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv425metal_interrupt_handler_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Function signature for interrupt callback handlers. </p>
 </dd></dl>
 
-<dl class="type">
-<dt id="_CPPv332metal_interrupt_vector_handler_t">
-<span id="_CPPv232metal_interrupt_vector_handler_t"></span><span id="metal_interrupt_vector_handler_t"></span><span class="target" id="interrupt_8h_1af7e7805fabf2f763699400870ef6b636"></span><em class="property">typedef </em>void (*<code class="descname">metal_interrupt_vector_handler_t</code>)<span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv332metal_interrupt_vector_handler_t" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp type">
+<dt id="_CPPv432metal_interrupt_vector_handler_t">
+<span id="_CPPv332metal_interrupt_vector_handler_t"></span><span id="_CPPv232metal_interrupt_vector_handler_t"></span><span id="metal_interrupt_vector_handler_t"></span><span class="target" id="interrupt_8h_1af7e7805fabf2f763699400870ef6b636"></span><em class="property">typedef </em>void (*<code class="sig-name descname">metal_interrupt_vector_handler_t</code>)<span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432metal_interrupt_vector_handler_t" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Enums</p>
-<dl class="type">
-<dt id="_CPPv327metal_interrupt_controller_">
-<span id="_CPPv227metal_interrupt_controller_"></span><span id="metal_interrupt_controller_"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1f"></span><em class="property">enum </em><code class="descname">metal_interrupt_controller_</code><a class="headerlink" href="#_CPPv327metal_interrupt_controller_" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enum">
+<dt id="_CPPv427metal_interrupt_controller_">
+<span id="_CPPv327metal_interrupt_controller_"></span><span id="_CPPv227metal_interrupt_controller_"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1f"></span><em class="property">enum </em><code class="sig-name descname">metal_interrupt_controller_</code><a class="headerlink" href="#_CPPv427metal_interrupt_controller_" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Possible interrupt controllers. </p>
 <p><em>Values:</em></p>
-<dl class="enumerator">
-<dt id="_CPPv320METAL_CPU_CONTROLLER">
-<span id="_CPPv220METAL_CPU_CONTROLLER"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1fa7f179a94786ae1bea56f0a8b1e464c30"></span><code class="descname">METAL_CPU_CONTROLLER</code> = 0<a class="headerlink" href="#_CPPv320METAL_CPU_CONTROLLER" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N27metal_interrupt_controller_20METAL_CPU_CONTROLLERE">
+<span id="_CPPv3N27metal_interrupt_controller_20METAL_CPU_CONTROLLERE"></span><span id="_CPPv2N27metal_interrupt_controller_20METAL_CPU_CONTROLLERE"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1fa7f179a94786ae1bea56f0a8b1e464c30"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_CPU_CONTROLLER</code> = 0<a class="headerlink" href="#_CPPv4N27metal_interrupt_controller_20METAL_CPU_CONTROLLERE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="enumerator">
-<dt id="_CPPv322METAL_CLINT_CONTROLLER">
-<span id="_CPPv222METAL_CLINT_CONTROLLER"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1fa18a760b779d4070d87787d0cb83238b0"></span><code class="descname">METAL_CLINT_CONTROLLER</code> = 1<a class="headerlink" href="#_CPPv322METAL_CLINT_CONTROLLER" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N27metal_interrupt_controller_22METAL_CLINT_CONTROLLERE">
+<span id="_CPPv3N27metal_interrupt_controller_22METAL_CLINT_CONTROLLERE"></span><span id="_CPPv2N27metal_interrupt_controller_22METAL_CLINT_CONTROLLERE"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1fa18a760b779d4070d87787d0cb83238b0"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_CLINT_CONTROLLER</code> = 1<a class="headerlink" href="#_CPPv4N27metal_interrupt_controller_22METAL_CLINT_CONTROLLERE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="enumerator">
-<dt id="_CPPv321METAL_CLIC_CONTROLLER">
-<span id="_CPPv221METAL_CLIC_CONTROLLER"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1faba591c3673c5802ad5c09baeb0062514"></span><code class="descname">METAL_CLIC_CONTROLLER</code> = 2<a class="headerlink" href="#_CPPv321METAL_CLIC_CONTROLLER" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N27metal_interrupt_controller_21METAL_CLIC_CONTROLLERE">
+<span id="_CPPv3N27metal_interrupt_controller_21METAL_CLIC_CONTROLLERE"></span><span id="_CPPv2N27metal_interrupt_controller_21METAL_CLIC_CONTROLLERE"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1faba591c3673c5802ad5c09baeb0062514"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_CLIC_CONTROLLER</code> = 2<a class="headerlink" href="#_CPPv4N27metal_interrupt_controller_21METAL_CLIC_CONTROLLERE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="enumerator">
-<dt id="_CPPv321METAL_PLIC_CONTROLLER">
-<span id="_CPPv221METAL_PLIC_CONTROLLER"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1fabb6825407a01e77f6664e2f42adf90ed"></span><code class="descname">METAL_PLIC_CONTROLLER</code> = 3<a class="headerlink" href="#_CPPv321METAL_PLIC_CONTROLLER" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N27metal_interrupt_controller_21METAL_PLIC_CONTROLLERE">
+<span id="_CPPv3N27metal_interrupt_controller_21METAL_PLIC_CONTROLLERE"></span><span id="_CPPv2N27metal_interrupt_controller_21METAL_PLIC_CONTROLLERE"></span><span class="target" id="interrupt_8h_1a295e8fcb66e0ac8f87c86071f25a2c1fabb6825407a01e77f6664e2f42adf90ed"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_PLIC_CONTROLLER</code> = 3<a class="headerlink" href="#_CPPv4N27metal_interrupt_controller_21METAL_PLIC_CONTROLLERE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="type">
-<dt id="_CPPv318metal_vector_mode_">
-<span id="_CPPv218metal_vector_mode_"></span><span id="metal_vector_mode_"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728"></span><em class="property">enum </em><code class="descname">metal_vector_mode_</code><a class="headerlink" href="#_CPPv318metal_vector_mode_" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enum">
+<dt id="_CPPv418metal_vector_mode_">
+<span id="_CPPv318metal_vector_mode_"></span><span id="_CPPv218metal_vector_mode_"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728"></span><em class="property">enum </em><code class="sig-name descname">metal_vector_mode_</code><a class="headerlink" href="#_CPPv418metal_vector_mode_" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Possible mode of interrupts to operate. </p>
 <p><em>Values:</em></p>
-<dl class="enumerator">
-<dt id="_CPPv317METAL_DIRECT_MODE">
-<span id="_CPPv217METAL_DIRECT_MODE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728ad924f2ea83b99b7d5be2e042e88c6dbd"></span><code class="descname">METAL_DIRECT_MODE</code> = 0<a class="headerlink" href="#_CPPv317METAL_DIRECT_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N18metal_vector_mode_17METAL_DIRECT_MODEE">
+<span id="_CPPv3N18metal_vector_mode_17METAL_DIRECT_MODEE"></span><span id="_CPPv2N18metal_vector_mode_17METAL_DIRECT_MODEE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728ad924f2ea83b99b7d5be2e042e88c6dbd"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_DIRECT_MODE</code> = 0<a class="headerlink" href="#_CPPv4N18metal_vector_mode_17METAL_DIRECT_MODEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="enumerator">
-<dt id="_CPPv317METAL_VECTOR_MODE">
-<span id="_CPPv217METAL_VECTOR_MODE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728a4287274b1ef3c4a1a5b40ee32740e522"></span><code class="descname">METAL_VECTOR_MODE</code> = 1<a class="headerlink" href="#_CPPv317METAL_VECTOR_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N18metal_vector_mode_17METAL_VECTOR_MODEE">
+<span id="_CPPv3N18metal_vector_mode_17METAL_VECTOR_MODEE"></span><span id="_CPPv2N18metal_vector_mode_17METAL_VECTOR_MODEE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728a4287274b1ef3c4a1a5b40ee32740e522"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_VECTOR_MODE</code> = 1<a class="headerlink" href="#_CPPv4N18metal_vector_mode_17METAL_VECTOR_MODEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="enumerator">
-<dt id="_CPPv330METAL_SELECTIVE_NONVECTOR_MODE">
-<span id="_CPPv230METAL_SELECTIVE_NONVECTOR_MODE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728a2a114b2c7f6df81e227fd2290ff72ab1"></span><code class="descname">METAL_SELECTIVE_NONVECTOR_MODE</code> = 2<a class="headerlink" href="#_CPPv330METAL_SELECTIVE_NONVECTOR_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N18metal_vector_mode_30METAL_SELECTIVE_NONVECTOR_MODEE">
+<span id="_CPPv3N18metal_vector_mode_30METAL_SELECTIVE_NONVECTOR_MODEE"></span><span id="_CPPv2N18metal_vector_mode_30METAL_SELECTIVE_NONVECTOR_MODEE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728a2a114b2c7f6df81e227fd2290ff72ab1"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_SELECTIVE_NONVECTOR_MODE</code> = 2<a class="headerlink" href="#_CPPv4N18metal_vector_mode_30METAL_SELECTIVE_NONVECTOR_MODEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="enumerator">
-<dt id="_CPPv327METAL_SELECTIVE_VECTOR_MODE">
-<span id="_CPPv227METAL_SELECTIVE_VECTOR_MODE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728a2a0f324727404e6d792bb629b532388e"></span><code class="descname">METAL_SELECTIVE_VECTOR_MODE</code> = 3<a class="headerlink" href="#_CPPv327METAL_SELECTIVE_VECTOR_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N18metal_vector_mode_27METAL_SELECTIVE_VECTOR_MODEE">
+<span id="_CPPv3N18metal_vector_mode_27METAL_SELECTIVE_VECTOR_MODEE"></span><span id="_CPPv2N18metal_vector_mode_27METAL_SELECTIVE_VECTOR_MODEE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728a2a0f324727404e6d792bb629b532388e"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_SELECTIVE_VECTOR_MODE</code> = 3<a class="headerlink" href="#_CPPv4N18metal_vector_mode_27METAL_SELECTIVE_VECTOR_MODEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="enumerator">
-<dt id="_CPPv326METAL_HARDWARE_VECTOR_MODE">
-<span id="_CPPv226METAL_HARDWARE_VECTOR_MODE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728a4d512f09eb589d9ffd8444706569f9e1"></span><code class="descname">METAL_HARDWARE_VECTOR_MODE</code> = 4<a class="headerlink" href="#_CPPv326METAL_HARDWARE_VECTOR_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N18metal_vector_mode_26METAL_HARDWARE_VECTOR_MODEE">
+<span id="_CPPv3N18metal_vector_mode_26METAL_HARDWARE_VECTOR_MODEE"></span><span id="_CPPv2N18metal_vector_mode_26METAL_HARDWARE_VECTOR_MODEE"></span><span class="target" id="interrupt_8h_1ac60eddab23447dc04711785118af2728a4d512f09eb589d9ffd8444706569f9e1"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_HARDWARE_VECTOR_MODE</code> = 4<a class="headerlink" href="#_CPPv4N18metal_vector_mode_26METAL_HARDWARE_VECTOR_MODEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
 
-<dl class="type">
-<dt id="_CPPv321metal_intr_priv_mode_">
-<span id="_CPPv221metal_intr_priv_mode_"></span><span id="metal_intr_priv_mode_"></span><span class="target" id="interrupt_8h_1a7030daaec0e8fd225e7b17ea7459da19"></span><em class="property">enum </em><code class="descname">metal_intr_priv_mode_</code><a class="headerlink" href="#_CPPv321metal_intr_priv_mode_" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enum">
+<dt id="_CPPv421metal_intr_priv_mode_">
+<span id="_CPPv321metal_intr_priv_mode_"></span><span id="_CPPv221metal_intr_priv_mode_"></span><span class="target" id="interrupt_8h_1a7030daaec0e8fd225e7b17ea7459da19"></span><em class="property">enum </em><code class="sig-name descname">metal_intr_priv_mode_</code><a class="headerlink" href="#_CPPv421metal_intr_priv_mode_" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Possible mode of privilege interrupts to operate. </p>
 <p><em>Values:</em></p>
-<dl class="enumerator">
-<dt id="_CPPv322METAL_INTR_PRIV_M_MODE">
-<span id="_CPPv222METAL_INTR_PRIV_M_MODE"></span><span class="target" id="interrupt_8h_1a7030daaec0e8fd225e7b17ea7459da19a56d876601acd6179176a764d53d89f18"></span><code class="descname">METAL_INTR_PRIV_M_MODE</code> = 0<a class="headerlink" href="#_CPPv322METAL_INTR_PRIV_M_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N21metal_intr_priv_mode_22METAL_INTR_PRIV_M_MODEE">
+<span id="_CPPv3N21metal_intr_priv_mode_22METAL_INTR_PRIV_M_MODEE"></span><span id="_CPPv2N21metal_intr_priv_mode_22METAL_INTR_PRIV_M_MODEE"></span><span class="target" id="interrupt_8h_1a7030daaec0e8fd225e7b17ea7459da19a56d876601acd6179176a764d53d89f18"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_INTR_PRIV_M_MODE</code> = 0<a class="headerlink" href="#_CPPv4N21metal_intr_priv_mode_22METAL_INTR_PRIV_M_MODEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="enumerator">
-<dt id="_CPPv323METAL_INTR_PRIV_MU_MODE">
-<span id="_CPPv223METAL_INTR_PRIV_MU_MODE"></span><span class="target" id="interrupt_8h_1a7030daaec0e8fd225e7b17ea7459da19a4f1230598d0890c45415efb277434f55"></span><code class="descname">METAL_INTR_PRIV_MU_MODE</code> = 1<a class="headerlink" href="#_CPPv323METAL_INTR_PRIV_MU_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N21metal_intr_priv_mode_23METAL_INTR_PRIV_MU_MODEE">
+<span id="_CPPv3N21metal_intr_priv_mode_23METAL_INTR_PRIV_MU_MODEE"></span><span id="_CPPv2N21metal_intr_priv_mode_23METAL_INTR_PRIV_MU_MODEE"></span><span class="target" id="interrupt_8h_1a7030daaec0e8fd225e7b17ea7459da19a4f1230598d0890c45415efb277434f55"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_INTR_PRIV_MU_MODE</code> = 1<a class="headerlink" href="#_CPPv4N21metal_intr_priv_mode_23METAL_INTR_PRIV_MU_MODEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
-<dl class="enumerator">
-<dt id="_CPPv324METAL_INTR_PRIV_MSU_MODE">
-<span id="_CPPv224METAL_INTR_PRIV_MSU_MODE"></span><span class="target" id="interrupt_8h_1a7030daaec0e8fd225e7b17ea7459da19adcd4861b6d8849dc89d0f67148576fba"></span><code class="descname">METAL_INTR_PRIV_MSU_MODE</code> = 2<a class="headerlink" href="#_CPPv324METAL_INTR_PRIV_MSU_MODE" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp enumerator">
+<dt id="_CPPv4N21metal_intr_priv_mode_24METAL_INTR_PRIV_MSU_MODEE">
+<span id="_CPPv3N21metal_intr_priv_mode_24METAL_INTR_PRIV_MSU_MODEE"></span><span id="_CPPv2N21metal_intr_priv_mode_24METAL_INTR_PRIV_MSU_MODEE"></span><span class="target" id="interrupt_8h_1a7030daaec0e8fd225e7b17ea7459da19adcd4861b6d8849dc89d0f67148576fba"></span><em class="property">enumerator </em><code class="sig-name descname">METAL_INTR_PRIV_MSU_MODE</code> = 2<a class="headerlink" href="#_CPPv4N21metal_intr_priv_mode_24METAL_INTR_PRIV_MSU_MODEE" title="Permalink to this definition">¶</a><br /></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -154,311 +178,394 @@
 </div>
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Functions</p>
-<dl class="function">
-<dt id="_CPPv320metal_interrupt_initP15metal_interrupt">
-<span id="_CPPv220metal_interrupt_initP15metal_interrupt"></span><span id="metal_interrupt_init__metal_interruptP"></span><span class="target" id="interrupt_8h_1aaaf0e1976a93141d379f98a19d1fccf6"></span>__inline__ void <code class="descname">metal_interrupt_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv320metal_interrupt_initP15metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv420metal_interrupt_initP15metal_interrupt">
+<span id="_CPPv320metal_interrupt_initP15metal_interrupt"></span><span id="_CPPv220metal_interrupt_initP15metal_interrupt"></span><span id="metal_interrupt_init__metal_interruptP"></span><span class="target" id="interrupt_8h_1aaaf0e1976a93141d379f98a19d1fccf6"></span>__inline__ void <code class="sig-name descname">metal_interrupt_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv420metal_interrupt_initP15metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initialize a given interrupt controller. </p>
 <p>Initialize a given interrupt controller. This function must be called before any interrupts are registered or enabled with the handler. It is invalid to initialize an interrupt controller more than once.</p>
-<p><dl class="docutils">
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
+<p><dl class="simple">
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv330metal_interrupt_get_controller21metal_intr_cntrl_typei">
-<span id="_CPPv230metal_interrupt_get_controller21metal_intr_cntrl_typei"></span><span id="metal_interrupt_get_controller__metal_intr_cntrl_type.i"></span><span class="target" id="interrupt_8h_1af2764451d21103ff794dbfbe5057699b"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="descname">metal_interrupt_get_controller</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv321metal_intr_cntrl_type" title="metal_intr_cntrl_type">metal_intr_cntrl_type</a> <em>cntrl</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330metal_interrupt_get_controller21metal_intr_cntrl_typei" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv430metal_interrupt_get_controller21metal_intr_cntrl_typei">
+<span id="_CPPv330metal_interrupt_get_controller21metal_intr_cntrl_typei"></span><span id="_CPPv230metal_interrupt_get_controller21metal_intr_cntrl_typei"></span><span id="metal_interrupt_get_controller__metal_intr_cntrl_type.i"></span><span class="target" id="interrupt_8h_1af2764451d21103ff794dbfbe5057699b"></span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<code class="sig-name descname">metal_interrupt_get_controller</code><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv421metal_intr_cntrl_type" title="metal_intr_cntrl_type">metal_intr_cntrl_type</a> <em>cntrl</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430metal_interrupt_get_controller21metal_intr_cntrl_typei" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the handle for an given interrupt controller type. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>A handle to the interrupt controller (CLINT, CLIC, PLIC), or NULL if none is found for the requested label </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">cntrl</span></code>: The type ofinterrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The instance of the interrupt controller </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>A handle to the interrupt controller (CLINT, CLIC, PLIC), or NULL if none is found for the requested label </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">cntrl</span></code>: The type ofinterrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The instance of the interrupt controller </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv331metal_interrupt_set_vector_modeP15metal_interrupt17metal_vector_mode">
-<span id="_CPPv231metal_interrupt_set_vector_modeP15metal_interrupt17metal_vector_mode"></span><span id="metal_interrupt_set_vector_mode__metal_interruptP.metal_vector_mode"></span><span class="target" id="interrupt_8h_1ab19d888fa1a714b4eb4d46c1a5bd8d35"></span>__inline__ int <code class="descname">metal_interrupt_set_vector_mode</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, <a class="reference internal" href="#_CPPv317metal_vector_mode" title="metal_vector_mode">metal_vector_mode</a> <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv331metal_interrupt_set_vector_modeP15metal_interrupt17metal_vector_mode" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv431metal_interrupt_set_vector_modeP15metal_interrupt17metal_vector_mode">
+<span id="_CPPv331metal_interrupt_set_vector_modeP15metal_interrupt17metal_vector_mode"></span><span id="_CPPv231metal_interrupt_set_vector_modeP15metal_interrupt17metal_vector_mode"></span><span id="metal_interrupt_set_vector_mode__metal_interruptP.metal_vector_mode"></span><span class="target" id="interrupt_8h_1ab19d888fa1a714b4eb4d46c1a5bd8d35"></span>__inline__ int <code class="sig-name descname">metal_interrupt_set_vector_mode</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, <a class="reference internal" href="#_CPPv417metal_vector_mode" title="metal_vector_mode">metal_vector_mode</a> <em>mode</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv431metal_interrupt_set_vector_modeP15metal_interrupt17metal_vector_mode" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Configure vector mode for an interrupt controller. </p>
 <p>Configure vector mode for an interrupt controller. This function must be called after initialization and before configuring individual interrupts, registering ISR.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">mode</span></code>: The vector mode of the interrupt controller. </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: The vector mode of the interrupt controller. </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv331metal_interrupt_get_vector_modeP15metal_interrupt">
-<span id="_CPPv231metal_interrupt_get_vector_modeP15metal_interrupt"></span><span id="metal_interrupt_get_vector_mode__metal_interruptP"></span><span class="target" id="interrupt_8h_1a91e49885c41d409a43f18589273fcdfb"></span>__inline__ <a class="reference internal" href="#_CPPv317metal_vector_mode" title="metal_vector_mode">metal_vector_mode</a> <code class="descname">metal_interrupt_get_vector_mode</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv331metal_interrupt_get_vector_modeP15metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv431metal_interrupt_get_vector_modeP15metal_interrupt">
+<span id="_CPPv331metal_interrupt_get_vector_modeP15metal_interrupt"></span><span id="_CPPv231metal_interrupt_get_vector_modeP15metal_interrupt"></span><span id="metal_interrupt_get_vector_mode__metal_interruptP"></span><span class="target" id="interrupt_8h_1a91e49885c41d409a43f18589273fcdfb"></span>__inline__ <a class="reference internal" href="#_CPPv417metal_vector_mode" title="metal_vector_mode">metal_vector_mode</a> <code class="sig-name descname">metal_interrupt_get_vector_mode</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv431metal_interrupt_get_vector_modeP15metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get vector mode of a given an interrupt controller. </p>
 <p>Configure vector mode for an interrupt controller. This function must be called after initialization and before configuring individual interrupts, registering ISR.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The interrupt vector mode </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">mode</span></code>: The vector mode of the interrupt controller. </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The interrupt vector mode </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code>: The vector mode of the interrupt controller. </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv329metal_interrupt_set_privilegeP15metal_interrupt20metal_intr_priv_mode">
-<span id="_CPPv229metal_interrupt_set_privilegeP15metal_interrupt20metal_intr_priv_mode"></span><span id="metal_interrupt_set_privilege__metal_interruptP.metal_intr_priv_mode"></span><span class="target" id="interrupt_8h_1a87b8962a969a586e123b95a56fb9ecf9"></span>__inline__ int <code class="descname">metal_interrupt_set_privilege</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, <a class="reference internal" href="#_CPPv320metal_intr_priv_mode" title="metal_intr_priv_mode">metal_intr_priv_mode</a> <em>privilege</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329metal_interrupt_set_privilegeP15metal_interrupt20metal_intr_priv_mode" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv429metal_interrupt_set_privilegeP15metal_interrupt20metal_intr_priv_mode">
+<span id="_CPPv329metal_interrupt_set_privilegeP15metal_interrupt20metal_intr_priv_mode"></span><span id="_CPPv229metal_interrupt_set_privilegeP15metal_interrupt20metal_intr_priv_mode"></span><span id="metal_interrupt_set_privilege__metal_interruptP.metal_intr_priv_mode"></span><span class="target" id="interrupt_8h_1a87b8962a969a586e123b95a56fb9ecf9"></span>__inline__ int <code class="sig-name descname">metal_interrupt_set_privilege</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, <a class="reference internal" href="#_CPPv420metal_intr_priv_mode" title="metal_intr_priv_mode">metal_intr_priv_mode</a> <em>privilege</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429metal_interrupt_set_privilegeP15metal_interrupt20metal_intr_priv_mode" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Configure privilege mode a of given interrupt controller. </p>
 <p>Configure privilege mode for a given interrupt controller. This function must be called after initialization and before configuring individual interrupts, registering ISR.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">privilege</span></code>: The privilege mode of the interrupt controller. </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">privilege</span></code>: The privilege mode of the interrupt controller. </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv329metal_interrupt_get_privilegeP15metal_interrupt">
-<span id="_CPPv229metal_interrupt_get_privilegeP15metal_interrupt"></span><span id="metal_interrupt_get_privilege__metal_interruptP"></span><span class="target" id="interrupt_8h_1a6ac3191335297b5120bd345ff9aebc15"></span>__inline__ <a class="reference internal" href="#_CPPv320metal_intr_priv_mode" title="metal_intr_priv_mode">metal_intr_priv_mode</a> <code class="descname">metal_interrupt_get_privilege</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329metal_interrupt_get_privilegeP15metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv429metal_interrupt_get_privilegeP15metal_interrupt">
+<span id="_CPPv329metal_interrupt_get_privilegeP15metal_interrupt"></span><span id="_CPPv229metal_interrupt_get_privilegeP15metal_interrupt"></span><span id="metal_interrupt_get_privilege__metal_interruptP"></span><span class="target" id="interrupt_8h_1a6ac3191335297b5120bd345ff9aebc15"></span>__inline__ <a class="reference internal" href="#_CPPv420metal_intr_priv_mode" title="metal_intr_priv_mode">metal_intr_priv_mode</a> <code class="sig-name descname">metal_interrupt_get_privilege</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429metal_interrupt_get_privilegeP15metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get privilege mode a of given interrupt controller. </p>
 <p>Get privilege mode for a given interrupt controller. This function must be called after initialization and before configuring individual interrupts, registering ISR.</p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The interrupt privilege mode </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The interrupt privilege mode </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv321metal_interrupt_clearP15metal_interrupti">
-<span id="_CPPv221metal_interrupt_clearP15metal_interrupti"></span><span id="metal_interrupt_clear__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a955ac6e982f8477aa2307d30c69e338a"></span>__inline__ int <code class="descname">metal_interrupt_clear</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv321metal_interrupt_clearP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv421metal_interrupt_clearP15metal_interrupti">
+<span id="_CPPv321metal_interrupt_clearP15metal_interrupti"></span><span id="_CPPv221metal_interrupt_clearP15metal_interrupti"></span><span id="metal_interrupt_clear__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a955ac6e982f8477aa2307d30c69e338a"></span>__inline__ int <code class="sig-name descname">metal_interrupt_clear</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv421metal_interrupt_clearP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>clear an interrupt </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to trigger </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to trigger </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv319metal_interrupt_setP15metal_interrupti">
-<span id="_CPPv219metal_interrupt_setP15metal_interrupti"></span><span id="metal_interrupt_set__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1abd87b95d9d9b08800dae6062d810f951"></span>__inline__ int <code class="descname">metal_interrupt_set</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv319metal_interrupt_setP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv419metal_interrupt_setP15metal_interrupti">
+<span id="_CPPv319metal_interrupt_setP15metal_interrupti"></span><span id="_CPPv219metal_interrupt_setP15metal_interrupti"></span><span id="metal_interrupt_set__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1abd87b95d9d9b08800dae6062d810f951"></span>__inline__ int <code class="sig-name descname">metal_interrupt_set</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv419metal_interrupt_setP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set an interrupt. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to trigger </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to trigger </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv332metal_interrupt_register_handlerP15metal_interrupti25metal_interrupt_handler_tPv">
-<span id="_CPPv232metal_interrupt_register_handlerP15metal_interrupti25metal_interrupt_handler_tPv"></span><span id="metal_interrupt_register_handler__metal_interruptP.i.metal_interrupt_handler_t.voidP"></span><span class="target" id="interrupt_8h_1a6a6dc3ca8ced645be88cc2466af962f6"></span>__inline__ int <code class="descname">metal_interrupt_register_handler</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em>, <a class="reference internal" href="#_CPPv325metal_interrupt_handler_t" title="metal_interrupt_handler_t">metal_interrupt_handler_t</a> <em>handler</em>, void *<em>priv_data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv332metal_interrupt_register_handlerP15metal_interrupti25metal_interrupt_handler_tPv" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv432metal_interrupt_register_handlerP15metal_interrupti25metal_interrupt_handler_tPv">
+<span id="_CPPv332metal_interrupt_register_handlerP15metal_interrupti25metal_interrupt_handler_tPv"></span><span id="_CPPv232metal_interrupt_register_handlerP15metal_interrupti25metal_interrupt_handler_tPv"></span><span id="metal_interrupt_register_handler__metal_interruptP.i.metal_interrupt_handler_t.voidP"></span><span class="target" id="interrupt_8h_1a6a6dc3ca8ced645be88cc2466af962f6"></span>__inline__ int <code class="sig-name descname">metal_interrupt_register_handler</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em>, <a class="reference internal" href="#_CPPv425metal_interrupt_handler_t" title="metal_interrupt_handler_t">metal_interrupt_handler_t</a> <em>handler</em>, void *<em>priv_data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432metal_interrupt_register_handlerP15metal_interrupti25metal_interrupt_handler_tPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register an interrupt handler. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to register </li>
-<li><code class="docutils literal notranslate"><span class="pre">handler</span></code>: The interrupt handler callback </li>
-<li><code class="docutils literal notranslate"><span class="pre">priv_data</span></code>: Private data for the interrupt handler </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to register </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">handler</span></code>: The interrupt handler callback </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">priv_data</span></code>: Private data for the interrupt handler </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv339metal_interrupt_register_vector_handlerP15metal_interrupti32metal_interrupt_vector_handler_tPv">
-<span id="_CPPv239metal_interrupt_register_vector_handlerP15metal_interrupti32metal_interrupt_vector_handler_tPv"></span><span id="metal_interrupt_register_vector_handler__metal_interruptP.i.metal_interrupt_vector_handler_t.voidP"></span><span class="target" id="interrupt_8h_1a2bfc6eb1a6b1b5896c36ce0528e4b928"></span>__inline__ int <code class="descname">metal_interrupt_register_vector_handler</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em>, <a class="reference internal" href="#_CPPv332metal_interrupt_vector_handler_t" title="metal_interrupt_vector_handler_t">metal_interrupt_vector_handler_t</a> <em>handler</em>, void *<em>priv_data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv339metal_interrupt_register_vector_handlerP15metal_interrupti32metal_interrupt_vector_handler_tPv" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv439metal_interrupt_register_vector_handlerP15metal_interrupti32metal_interrupt_vector_handler_tPv">
+<span id="_CPPv339metal_interrupt_register_vector_handlerP15metal_interrupti32metal_interrupt_vector_handler_tPv"></span><span id="_CPPv239metal_interrupt_register_vector_handlerP15metal_interrupti32metal_interrupt_vector_handler_tPv"></span><span id="metal_interrupt_register_vector_handler__metal_interruptP.i.metal_interrupt_vector_handler_t.voidP"></span><span class="target" id="interrupt_8h_1a2bfc6eb1a6b1b5896c36ce0528e4b928"></span>__inline__ int <code class="sig-name descname">metal_interrupt_register_vector_handler</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em>, <a class="reference internal" href="#_CPPv432metal_interrupt_vector_handler_t" title="metal_interrupt_vector_handler_t">metal_interrupt_vector_handler_t</a> <em>handler</em>, void *<em>priv_data</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv439metal_interrupt_register_vector_handlerP15metal_interrupti32metal_interrupt_vector_handler_tPv" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Register an interrupt vector handler. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to register </li>
-<li><code class="docutils literal notranslate"><span class="pre">handler</span></code>: The interrupt vector handler callback </li>
-<li><code class="docutils literal notranslate"><span class="pre">priv_data</span></code>: Private data for the interrupt handler </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to register </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">handler</span></code>: The interrupt vector handler callback </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">priv_data</span></code>: Private data for the interrupt handler </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv322metal_interrupt_enableP15metal_interrupti">
-<span id="_CPPv222metal_interrupt_enableP15metal_interrupti"></span><span id="metal_interrupt_enable__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a9953123e3bbb2f7f3f5ac9731a871cde"></span>__inline__ int <code class="descname">metal_interrupt_enable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv322metal_interrupt_enableP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv422metal_interrupt_enableP15metal_interrupti">
+<span id="_CPPv322metal_interrupt_enableP15metal_interrupti"></span><span id="_CPPv222metal_interrupt_enableP15metal_interrupti"></span><span id="metal_interrupt_enable__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a9953123e3bbb2f7f3f5ac9731a871cde"></span>__inline__ int <code class="sig-name descname">metal_interrupt_enable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv422metal_interrupt_enableP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Enable an interrupt. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv323metal_interrupt_disableP15metal_interrupti">
-<span id="_CPPv223metal_interrupt_disableP15metal_interrupti"></span><span id="metal_interrupt_disable__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a394b0c787c6e721c23e02a472b5256c7"></span>__inline__ int <code class="descname">metal_interrupt_disable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv323metal_interrupt_disableP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv423metal_interrupt_disableP15metal_interrupti">
+<span id="_CPPv323metal_interrupt_disableP15metal_interrupti"></span><span id="_CPPv223metal_interrupt_disableP15metal_interrupti"></span><span id="metal_interrupt_disable__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a394b0c787c6e721c23e02a472b5256c7"></span>__inline__ int <code class="sig-name descname">metal_interrupt_disable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv423metal_interrupt_disableP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Disable an interrupt. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to disable </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to disable </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv329metal_interrupt_set_thresholdP15metal_interruptj">
-<span id="_CPPv229metal_interrupt_set_thresholdP15metal_interruptj"></span><span id="metal_interrupt_set_threshold__metal_interruptP.unsigned-i"></span><span class="target" id="interrupt_8h_1a3bc1a58f1df53c2732177b1d2888b6ab"></span>int <code class="descname">metal_interrupt_set_threshold</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, unsigned int <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329metal_interrupt_set_thresholdP15metal_interruptj" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv429metal_interrupt_set_thresholdP15metal_interruptj">
+<span id="_CPPv329metal_interrupt_set_thresholdP15metal_interruptj"></span><span id="_CPPv229metal_interrupt_set_thresholdP15metal_interruptj"></span><span id="metal_interrupt_set_threshold__metal_interruptP.unsigned-i"></span><span class="target" id="interrupt_8h_1a7c666dbd19a4e14336cd8db5d69b18a4"></span>__inline__ int <code class="sig-name descname">metal_interrupt_set_threshold</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, unsigned int <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429metal_interrupt_set_thresholdP15metal_interruptj" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set interrupt threshold level. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">threshold</span></code>: The interrupt threshold level </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">threshold</span></code>: The interrupt threshold level </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv329metal_interrupt_get_thresholdP15metal_interrupt">
-<span id="_CPPv229metal_interrupt_get_thresholdP15metal_interrupt"></span><span id="metal_interrupt_get_threshold__metal_interruptP"></span><span class="target" id="interrupt_8h_1aa47d99c5063e97a31b3cb03be5565ec0"></span>unsigned int <code class="descname">metal_interrupt_get_threshold</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329metal_interrupt_get_thresholdP15metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv429metal_interrupt_get_thresholdP15metal_interrupt">
+<span id="_CPPv329metal_interrupt_get_thresholdP15metal_interrupt"></span><span id="_CPPv229metal_interrupt_get_thresholdP15metal_interrupt"></span><span id="metal_interrupt_get_threshold__metal_interruptP"></span><span class="target" id="interrupt_8h_1ab6675a1ff2f858fc98f3b735d6456c7c"></span>__inline__ unsigned int <code class="sig-name descname">metal_interrupt_get_threshold</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429metal_interrupt_get_thresholdP15metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get an interrupt threshold level. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The interrupt threshold level </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The interrupt threshold level </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv328metal_interrupt_set_priorityP15metal_interruptij">
-<span id="_CPPv228metal_interrupt_set_priorityP15metal_interruptij"></span><span id="metal_interrupt_set_priority__metal_interruptP.i.unsigned-i"></span><span class="target" id="interrupt_8h_1ae6f31d3ae697729a8ff42e490ec507cd"></span>int <code class="descname">metal_interrupt_set_priority</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em>, unsigned int <em>priority</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_interrupt_set_priorityP15metal_interruptij" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv428metal_interrupt_set_priorityP15metal_interruptij">
+<span id="_CPPv328metal_interrupt_set_priorityP15metal_interruptij"></span><span id="_CPPv228metal_interrupt_set_priorityP15metal_interruptij"></span><span id="metal_interrupt_set_priority__metal_interruptP.i.unsigned-i"></span><span class="target" id="interrupt_8h_1a3edabc12a4952427cb0d112465a204c8"></span>__inline__ int <code class="sig-name descname">metal_interrupt_set_priority</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em>, unsigned int <em>priority</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428metal_interrupt_set_priorityP15metal_interruptij" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Set an interrupt priority level. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </li>
-<li><code class="docutils literal notranslate"><span class="pre">priority</span></code>: The interrupt priority level </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">priority</span></code>: The interrupt priority level </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv328metal_interrupt_get_priorityP15metal_interrupti">
-<span id="_CPPv228metal_interrupt_get_priorityP15metal_interrupti"></span><span id="metal_interrupt_get_priority__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1acb81ba25182c5cb64767975cb15e0fd1"></span>unsigned int <code class="descname">metal_interrupt_get_priority</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv328metal_interrupt_get_priorityP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv428metal_interrupt_get_priorityP15metal_interrupti">
+<span id="_CPPv328metal_interrupt_get_priorityP15metal_interrupti"></span><span id="_CPPv228metal_interrupt_get_priorityP15metal_interrupti"></span><span id="metal_interrupt_get_priority__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a26e733b73f9e6e216c04e00dcd2594b2"></span>__inline__ unsigned int <code class="sig-name descname">metal_interrupt_get_priority</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428metal_interrupt_get_priorityP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get an interrupt priority level. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>The interrupt priority level </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The interrupt priority level </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv329metal_interrupt_vector_enableP15metal_interrupti">
-<span id="_CPPv229metal_interrupt_vector_enableP15metal_interrupti"></span><span id="metal_interrupt_vector_enable__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a8e49863c97df5a68eaadb502fac71678"></span>__inline__ int <code class="descname">metal_interrupt_vector_enable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv329metal_interrupt_vector_enableP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv436metal_interrupt_set_preemptive_levelP15metal_interruptij">
+<span id="_CPPv336metal_interrupt_set_preemptive_levelP15metal_interruptij"></span><span id="_CPPv236metal_interrupt_set_preemptive_levelP15metal_interruptij"></span><span id="metal_interrupt_set_preemptive_level__metal_interruptP.i.unsigned-i"></span><span class="target" id="interrupt_8h_1a504e1a19882f2cdd76ad4cf590b52c77"></span>__inline__ int <code class="sig-name descname">metal_interrupt_set_preemptive_level</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em>, unsigned int <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv436metal_interrupt_set_preemptive_levelP15metal_interruptij" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set preemptive level and priority for a given interrupt ID. </p>
+<p>Set the preemptive level and priority for a given interrupt ID.</p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">level</span></code>: The interrupt level and priority are encoded together </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv436metal_interrupt_get_preemptive_levelP15metal_interrupti">
+<span id="_CPPv336metal_interrupt_get_preemptive_levelP15metal_interrupti"></span><span id="_CPPv236metal_interrupt_get_preemptive_levelP15metal_interrupti"></span><span id="metal_interrupt_get_preemptive_level__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a23822fdb9e43d823df71c12815d14735"></span>__inline__ unsigned int <code class="sig-name descname">metal_interrupt_get_preemptive_level</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv436metal_interrupt_get_preemptive_levelP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get an interrupt preemptive level. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The interrupt level </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv429metal_interrupt_vector_enableP15metal_interrupti">
+<span id="_CPPv329metal_interrupt_vector_enableP15metal_interrupti"></span><span id="_CPPv229metal_interrupt_vector_enableP15metal_interrupti"></span><span id="metal_interrupt_vector_enable__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1a8e49863c97df5a68eaadb502fac71678"></span>__inline__ int <code class="sig-name descname">metal_interrupt_vector_enable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv429metal_interrupt_vector_enableP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Enable an interrupt vector. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </p></li>
 </ul>
 </dd>
 </dl>
 </p>
 </dd></dl>
 
-<dl class="function">
-<dt id="_CPPv330metal_interrupt_vector_disableP15metal_interrupti">
-<span id="_CPPv230metal_interrupt_vector_disableP15metal_interrupti"></span><span id="metal_interrupt_vector_disable__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1ab598681792c11d0d19d0de9025b6135c"></span>__inline__ int <code class="descname">metal_interrupt_vector_disable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv315metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv330metal_interrupt_vector_disableP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp function">
+<dt id="_CPPv430metal_interrupt_vector_disableP15metal_interrupti">
+<span id="_CPPv330metal_interrupt_vector_disableP15metal_interrupti"></span><span id="_CPPv230metal_interrupt_vector_disableP15metal_interrupti"></span><span id="metal_interrupt_vector_disable__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1ab598681792c11d0d19d0de9025b6135c"></span>__inline__ int <code class="sig-name descname">metal_interrupt_vector_disable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430metal_interrupt_vector_disableP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Disable an interrupt vector. </p>
-<p><dl class="docutils">
-<dt><strong>Return</strong></dt>
-<dd>0 upon success </dd>
-<dt><strong>Parameters</strong></dt>
-<dd><ul class="breatheparameterlist first last simple">
-<li><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </li>
-<li><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to disable </li>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 upon success </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to disable </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv431metal_interrupt_affinity_enableP15metal_interrupt14metal_affinityi">
+<span id="_CPPv331metal_interrupt_affinity_enableP15metal_interrupt14metal_affinityi"></span><span id="_CPPv231metal_interrupt_affinity_enableP15metal_interrupt14metal_affinityi"></span><span id="metal_interrupt_affinity_enable__metal_interruptP.metal_affinity.i"></span><span class="target" id="interrupt_8h_1a67aa2edcc4ae27a16ec8355202fad1a8"></span>__inline__ <a class="reference internal" href="#_CPPv414metal_affinity" title="metal_affinity">metal_affinity</a> <code class="sig-name descname">metal_interrupt_affinity_enable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, <a class="reference internal" href="#_CPPv414metal_affinity" title="metal_affinity">metal_affinity</a> <em>bitmask</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv431metal_interrupt_affinity_enableP15metal_interrupt14metal_affinityi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable an interrupt for the hart contexts. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The result of each hart context. 0 upon success at relevant bit. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bitmask</span></code>: The bit mask of hart contexts to enable </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to enable </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv432metal_interrupt_affinity_disableP15metal_interrupt14metal_affinityi">
+<span id="_CPPv332metal_interrupt_affinity_disableP15metal_interrupt14metal_affinityi"></span><span id="_CPPv232metal_interrupt_affinity_disableP15metal_interrupt14metal_affinityi"></span><span id="metal_interrupt_affinity_disable__metal_interruptP.metal_affinity.i"></span><span class="target" id="interrupt_8h_1abd0b686652c62c5a867fc939655c2566"></span>__inline__ <a class="reference internal" href="#_CPPv414metal_affinity" title="metal_affinity">metal_affinity</a> <code class="sig-name descname">metal_interrupt_affinity_disable</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, <a class="reference internal" href="#_CPPv414metal_affinity" title="metal_affinity">metal_affinity</a> <em>bitmask</em>, int <em>id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv432metal_interrupt_affinity_disableP15metal_interrupt14metal_affinityi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Disable an interrupt for the hart contexts. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The result of each hart context. 0 upon success at relevant bit. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bitmask</span></code>: The bit mask of hart contexts to disable </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">id</span></code>: The interrupt ID to disable </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv438metal_interrupt_affinity_set_thresholdP15metal_interrupt14metal_affinityj">
+<span id="_CPPv338metal_interrupt_affinity_set_thresholdP15metal_interrupt14metal_affinityj"></span><span id="_CPPv238metal_interrupt_affinity_set_thresholdP15metal_interrupt14metal_affinityj"></span><span id="metal_interrupt_affinity_set_threshold__metal_interruptP.metal_affinity.unsigned-i"></span><span class="target" id="interrupt_8h_1a0f0c0399e482e096cf2ef4586c21541f"></span>__inline__ <a class="reference internal" href="#_CPPv414metal_affinity" title="metal_affinity">metal_affinity</a> <code class="sig-name descname">metal_interrupt_affinity_set_threshold</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, <a class="reference internal" href="#_CPPv414metal_affinity" title="metal_affinity">metal_affinity</a> <em>bitmask</em>, unsigned int <em>level</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv438metal_interrupt_affinity_set_thresholdP15metal_interrupt14metal_affinityj" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Set interrupt threshold level for the hart contexts. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The result of each hart context. 0 upon success at relevant bit. </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bitmask</span></code>: The bit mask of hart contexts to set threshold </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">threshold</span></code>: The interrupt threshold level </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv438metal_interrupt_affinity_get_thresholdP15metal_interrupti">
+<span id="_CPPv338metal_interrupt_affinity_get_thresholdP15metal_interrupti"></span><span id="_CPPv238metal_interrupt_affinity_get_thresholdP15metal_interrupti"></span><span id="metal_interrupt_affinity_get_threshold__metal_interruptP.i"></span><span class="target" id="interrupt_8h_1acf18d5562d8dcffa17dc429840bc4206"></span>__inline__ unsigned int <code class="sig-name descname">metal_interrupt_affinity_get_threshold</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv415metal_interrupt" title="metal_interrupt">metal_interrupt</a> *<em>controller</em>, int <em>context_id</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv438metal_interrupt_affinity_get_thresholdP15metal_interrupti" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get an interrupt threshold level from the hart context. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The interrupt threshold level </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">controller</span></code>: The handle for the interrupt controller </p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">context_id</span></code>: The hart context ID to get threshold </p></li>
 </ul>
 </dd>
 </dl>
@@ -466,9 +573,23 @@
 </dd></dl>
 
 </div>
-<dl class="class">
-<dt id="_CPPv315metal_interrupt">
-<span id="_CPPv215metal_interrupt"></span><span id="metal_interrupt"></span><span class="target" id="structmetal__interrupt"></span><em class="property">struct </em><code class="descname">metal_interrupt</code><a class="headerlink" href="#_CPPv315metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
+<dl class="cpp struct">
+<dt id="_CPPv415metal_affinity_">
+<span id="_CPPv315metal_affinity_"></span><span id="_CPPv215metal_affinity_"></span><span id="metal_affinity_"></span><span class="target" id="structmetal__affinity__"></span><em class="property">struct </em><code class="sig-name descname">metal_affinity_</code><a class="headerlink" href="#_CPPv415metal_affinity_" title="Permalink to this definition">¶</a><br /></dt>
+<dd><em>#include &lt;interrupt.h&gt;</em><p>The bitmask of hart context. </p>
+<div class="breathe-sectiondef docutils container">
+<p class="breathe-sectiondef-title rubric">Public Members</p>
+<dl class="cpp var">
+<dt id="_CPPv4N15metal_affinity_7bitmaskE">
+<span id="_CPPv3N15metal_affinity_7bitmaskE"></span><span id="_CPPv2N15metal_affinity_7bitmaskE"></span><span id="metal_affinity_::bitmask__unsigned-l"></span><span class="target" id="structmetal__affinity___1a13d6b889918ddaf14fe0792172d7d803"></span>unsigned long <code class="sig-name descname">bitmask</code><a class="headerlink" href="#_CPPv4N15metal_affinity_7bitmaskE" title="Permalink to this definition">¶</a><br /></dt>
+<dd></dd></dl>
+
+</div>
+</dd></dl>
+
+<dl class="cpp struct">
+<dt id="_CPPv415metal_interrupt">
+<span id="_CPPv315metal_interrupt"></span><span id="_CPPv215metal_interrupt"></span><span id="metal_interrupt"></span><span class="target" id="structmetal__interrupt"></span><em class="property">struct </em><code class="sig-name descname">metal_interrupt</code><a class="headerlink" href="#_CPPv415metal_interrupt" title="Permalink to this definition">¶</a><br /></dt>
 <dd><em>#include &lt;interrupt.h&gt;</em><p>A handle for an interrupt. </p>
 </dd></dl>
 
@@ -500,6 +621,7 @@
 <li class="toctree-l2"><a class="reference internal" href="clock.html">Clocks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cpu.html">CPU</a></li>
 <li class="toctree-l2"><a class="reference internal" href="gpio.html">GPIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="init.html">Constructors and Destructors</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Interrupts</a></li>
 <li class="toctree-l2"><a class="reference internal" href="itim.html">ITIM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="led.html">LEDs</a></li>
@@ -524,24 +646,22 @@
 <ul>
   <li><a href="../index.html">Documentation overview</a><ul>
   <li><a href="../api.html">API Reference</a><ul>
-      <li>Previous: <a href="gpio.html" title="previous chapter">GPIO</a></li>
+      <li>Previous: <a href="init.html" title="previous chapter">Constructors and Destructors</a></li>
       <li>Next: <a href="itim.html" title="next chapter">ITIM</a></li>
   </ul></li>
   </ul></li>
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="../search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
     </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -550,8 +670,8 @@
       &copy;2019, SiFive Inc..
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.7.5</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.11</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="../_sources/apiref/interrupt.rst.txt"
