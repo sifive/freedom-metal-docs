@@ -4,8 +4,8 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caches &#8212; Freedom Metal v20.05.00.03 documentation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Caches &#8212; Freedom Metal v20.08.00.00 documentation</title>
     <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -40,10 +40,55 @@
 <div class="breathe-sectiondef docutils container">
 <p class="breathe-sectiondef-title rubric">Functions</p>
 <dl class="cpp function">
+<dt id="_CPPv418metal_l2cache_initv">
+<span id="_CPPv318metal_l2cache_initv"></span><span id="_CPPv218metal_l2cache_initv"></span><span id="metal_l2cache_init__void"></span><span class="target" id="cache_8h_1a1ef28b7005a90d448a78e05ceac3a677"></span>int <code class="sig-name descname">metal_l2cache_init</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv418metal_l2cache_initv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Initialize L2 cache controller. Enables all available cache ways. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 If no error </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430metal_l2cache_get_enabled_waysv">
+<span id="_CPPv330metal_l2cache_get_enabled_waysv"></span><span id="_CPPv230metal_l2cache_get_enabled_waysv"></span><span id="metal_l2cache_get_enabled_ways__void"></span><span class="target" id="cache_8h_1a2b162fa00360989f00646af980e0b503"></span>int <code class="sig-name descname">metal_l2cache_get_enabled_ways</code><span class="sig-paren">(</span>void<span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430metal_l2cache_get_enabled_waysv" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Get the current number of enabled L2 cache ways. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>The current number of enabled L2 cache ways </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">None</span></code>: </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt id="_CPPv430metal_l2cache_set_enabled_waysi">
+<span id="_CPPv330metal_l2cache_set_enabled_waysi"></span><span id="_CPPv230metal_l2cache_set_enabled_waysi"></span><span id="metal_l2cache_set_enabled_ways__i"></span><span class="target" id="cache_8h_1aac3c7b529548b9740541388e7f522eca"></span>int <code class="sig-name descname">metal_l2cache_set_enabled_ways</code><span class="sig-paren">(</span>int <em>ways</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv430metal_l2cache_set_enabled_waysi" title="Permalink to this definition">¶</a><br /></dt>
+<dd><p>Enable the requested number of L2 cache ways. </p>
+<p><dl class="simple">
+<dt><strong>Return</strong></dt><dd><p>0 if the ways are successfully enabled </p>
+</dd>
+<dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ways</span></code>: Number of ways to enable </p></li>
+</ul>
+</dd>
+</dl>
+</p>
+</dd></dl>
+
+<dl class="cpp function">
 <dt id="_CPPv416metal_cache_initP11metal_cachei">
 <span id="_CPPv316metal_cache_initP11metal_cachei"></span><span id="_CPPv216metal_cache_initP11metal_cachei"></span><span id="metal_cache_init__metal_cacheP.i"></span><span class="target" id="cache_8h_1a095aae506e43f2fdf792f65ff63c1acc"></span>__inline__ void <code class="sig-name descname">metal_cache_init</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv411metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em>, int <em>ways</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv416metal_cache_initP11metal_cachei" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Initialize a cache. </p>
-<p><p>Initializes a cache with the requested number of ways enabled. </p>
+<p><p>Initializes a cache with the requested number of ways enabled. Note: API to be deprecated in next release. </p>
 <dl class="simple">
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cache</span></code>: The handle for the cache to initialize </p></li>
@@ -59,7 +104,7 @@
 <span id="_CPPv328metal_cache_get_enabled_waysP11metal_cache"></span><span id="_CPPv228metal_cache_get_enabled_waysP11metal_cache"></span><span id="metal_cache_get_enabled_ways__metal_cacheP"></span><span class="target" id="cache_8h_1a927d02f9513bf3ea60bc9acac6f34630"></span>__inline__ int <code class="sig-name descname">metal_cache_get_enabled_ways</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv411metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428metal_cache_get_enabled_waysP11metal_cache" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Get the current number of enabled cache ways. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>The current number of enabled cache ways </p>
+<dt><strong>Return</strong></dt><dd><p>The current number of enabled cache ways Note: API to be deprecated in next release. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cache</span></code>: The handle for the cache </p></li>
@@ -74,7 +119,7 @@
 <span id="_CPPv328metal_cache_set_enabled_waysP11metal_cachei"></span><span id="_CPPv228metal_cache_set_enabled_waysP11metal_cachei"></span><span id="metal_cache_set_enabled_ways__metal_cacheP.i"></span><span class="target" id="cache_8h_1a492c2f929416fd49c4c619f5ed938273"></span>__inline__ int <code class="sig-name descname">metal_cache_set_enabled_ways</code><span class="sig-paren">(</span><em class="property">struct</em> <a class="reference internal" href="#_CPPv411metal_cache" title="metal_cache">metal_cache</a> *<em>cache</em>, int <em>ways</em><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv428metal_cache_set_enabled_waysP11metal_cachei" title="Permalink to this definition">¶</a><br /></dt>
 <dd><p>Enable the requested number of cache ways. </p>
 <p><dl class="simple">
-<dt><strong>Return</strong></dt><dd><p>0 if the ways are successfully enabled </p>
+<dt><strong>Return</strong></dt><dd><p>0 if the ways are successfully enabled Note: API to be deprecated in next release. </p>
 </dd>
 <dt><strong>Parameters</strong></dt><dd><ul class="breatheparameterlist simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cache</span></code>: The handle for the cache </p></li>
@@ -151,7 +196,7 @@
 <dl class="cpp struct">
 <dt id="_CPPv411metal_cache">
 <span id="_CPPv311metal_cache"></span><span id="_CPPv211metal_cache"></span><span id="metal_cache"></span><span class="target" id="structmetal__cache"></span><em class="property">struct </em><code class="sig-name descname">metal_cache</code><a class="headerlink" href="#_CPPv411metal_cache" title="Permalink to this definition">¶</a><br /></dt>
-<dd><em>#include &lt;cache.h&gt;</em><p>a handle for a cache </p>
+<dd><em>#include &lt;cache.h&gt;</em><p>a handle for a cache Note: To be deprecated in next release. </p>
 </dd></dl>
 
 </div>
@@ -231,7 +276,7 @@
       &copy;2019, SiFive Inc..
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
